@@ -23,6 +23,7 @@
 		4EEF90A92601F9340030C1D8 /* HomeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90A82601F9340030C1D8 /* HomeDetail.swift */; };
 		4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90AF2601FBEE0030C1D8 /* Details.swift */; };
 		4EEF90B32601FCCA0030C1D8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90B22601FCCA0030C1D8 /* DetailView.swift */; };
+		4EEF90B7260202200030C1D8 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90B6260202200030C1D8 /* ProductDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4EEF90A82601F9340030C1D8 /* HomeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetail.swift; sourceTree = "<group>"; };
 		4EEF90AF2601FBEE0030C1D8 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		4EEF90B22601FCCA0030C1D8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4EEF90B6260202200030C1D8 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				4E037B582601E4BB00B24332 /* HomeScreen.swift */,
-				4EEF90A82601F9340030C1D8 /* HomeDetail.swift */,
+				4EEF90B5260202080030C1D8 /* detail */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -161,6 +163,15 @@
 			path = model;
 			sourceTree = "<group>";
 		};
+		4EEF90B5260202080030C1D8 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				4EEF90A82601F9340030C1D8 /* HomeDetail.swift */,
+				4EEF90B6260202200030C1D8 /* ProductDetail.swift */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,6 +252,7 @@
 				4E037B592601E4BB00B24332 /* HomeScreen.swift in Sources */,
 				4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */,
 				4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */,
+				4EEF90B7260202200030C1D8 /* ProductDetail.swift in Sources */,
 				4E021D422601D4B300319894 /* Board.swift in Sources */,
 				4E3C2A2B2601CC0900DD0962 /* MST_XDApp.swift in Sources */,
 				4EEF90A92601F9340030C1D8 /* HomeDetail.swift in Sources */,
