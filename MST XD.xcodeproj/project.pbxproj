@@ -25,6 +25,8 @@
 		4E43CF7D2602124300286C38 /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43CF7C2602124300286C38 /* ShopItem.swift */; };
 		4E43CF81260213ED00286C38 /* ShopCartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43CF80260213ED00286C38 /* ShopCartRow.swift */; };
 		4E43CF852602166200286C38 /* TotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43CF842602166200286C38 /* TotoView.swift */; };
+		4E43CF8826021AAA00286C38 /* AddMinusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43CF8726021AAA00286C38 /* AddMinusView.swift */; };
+		4EE4449926022F6800C2F756 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE4449826022F6800C2F756 /* CartViewModel.swift */; };
 		4EEF90A92601F9340030C1D8 /* HomeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90A82601F9340030C1D8 /* HomeDetail.swift */; };
 		4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90AF2601FBEE0030C1D8 /* Details.swift */; };
 		4EEF90B32601FCCA0030C1D8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90B22601FCCA0030C1D8 /* DetailView.swift */; };
@@ -52,6 +54,8 @@
 		4E43CF7C2602124300286C38 /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
 		4E43CF80260213ED00286C38 /* ShopCartRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartRow.swift; sourceTree = "<group>"; };
 		4E43CF842602166200286C38 /* TotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotoView.swift; sourceTree = "<group>"; };
+		4E43CF8726021AAA00286C38 /* AddMinusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMinusView.swift; sourceTree = "<group>"; };
+		4EE4449826022F6800C2F756 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		4EEF90A82601F9340030C1D8 /* HomeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetail.swift; sourceTree = "<group>"; };
 		4EEF90AF2601FBEE0030C1D8 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		4EEF90B22601FCCA0030C1D8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				4E3C2A2A2601CC0900DD0962 /* MST_XDApp.swift */,
+				4EE4449726022F6100C2F756 /* viewmodel */,
 				4E3C2A3C2601CC1C00DD0962 /* model */,
 				4E3C2A3B2601CC1700DD0962 /* view */,
 				4E3C2A3A2601CC1200DD0962 /* SCENES */,
@@ -190,6 +195,7 @@
 				4E43CF772602116A00286C38 /* EpmtyShopView.swift */,
 				4E43CF80260213ED00286C38 /* ShopCartRow.swift */,
 				4E43CF842602166200286C38 /* TotoView.swift */,
+				4E43CF8726021AAA00286C38 /* AddMinusView.swift */,
 			);
 			path = shop;
 			sourceTree = "<group>";
@@ -200,6 +206,14 @@
 				4E43CF7C2602124300286C38 /* ShopItem.swift */,
 			);
 			path = shop;
+			sourceTree = "<group>";
+		};
+		4EE4449726022F6100C2F756 /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				4EE4449826022F6800C2F756 /* CartViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		4EEF90B5260202080030C1D8 /* detail */ = {
@@ -290,10 +304,12 @@
 				4E021D322601CDFB00319894 /* welcome.swift in Sources */,
 				4E037B672601E9E000B24332 /* CategoryView.swift in Sources */,
 				4E3C2A2D2601CC0900DD0962 /* ContentView.swift in Sources */,
+				4EE4449926022F6800C2F756 /* CartViewModel.swift in Sources */,
 				4E037B592601E4BB00B24332 /* HomeScreen.swift in Sources */,
 				4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */,
 				4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */,
 				4EEF90B7260202200030C1D8 /* ProductDetail.swift in Sources */,
+				4E43CF8826021AAA00286C38 /* AddMinusView.swift in Sources */,
 				4E021D422601D4B300319894 /* Board.swift in Sources */,
 				4E43CF7D2602124300286C38 /* ShopItem.swift in Sources */,
 				4E3C2A2B2601CC0900DD0962 /* MST_XDApp.swift in Sources */,

@@ -12,7 +12,7 @@ struct ShopItem: Identifiable {
     
     var title : String
     var pic : String
-    var price:String
+    var price:Float
     var count:Int
     
 }

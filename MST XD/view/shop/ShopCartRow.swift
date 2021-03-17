@@ -9,8 +9,9 @@ import SwiftUI
 
 struct ShopCartRow: View {
     
-    let ca:ShopItem 
-    
+//    let ca:ShopItem
+    @Binding var ca: ShopItem
+
     var body: some View {
         
         VStack {
@@ -38,7 +39,7 @@ struct ShopCartRow: View {
                         
                         Spacer()
                         
-                        Text(ca.price)
+                        Text(getPrice(value: ca.price))
                             .foregroundColor(.green)
                         
                         Spacer()
@@ -62,8 +63,8 @@ struct ShopCartRow: View {
     }
 }
 
-struct ShopCartRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ShopCartRow(ca: .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: "559$", count: 2))
-    }
-}
+//struct ShopCartRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ShopCartRow(ca: .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 559, count: 2))
+//    }
+//}

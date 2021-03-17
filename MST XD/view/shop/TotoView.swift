@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TotoView: View {
     
+    var text:String
     
     
     var body: some View {
@@ -23,7 +24,7 @@ struct TotoView: View {
                 Spacer()
                 
                 // calculating Total Price...
-                Text(calculateTotalPrice())
+                Text(text)
                     .font(.title)
                     .fontWeight(.heavy)
                     .foregroundColor(.green)
@@ -63,23 +64,6 @@ struct TotoView: View {
         .shadow(color: .gray, radius: 5, x: 2, y: 2)
     }
     
-    func getIndex(item: ShopItem)->Int{
-        0
-//        return cartData.items.firstIndex { (item1) -> Bool in
-//            return item.id == item1.id
-//        } ?? 0
-    }
-    
-    func calculateTotalPrice()->String{
-        "614$"
-//        var price : Float = 0
-        
-//        cartData.items.forEach { (item) in
-//            price += Float(item.quantity) * item.price
-//        }
-//
-//        return getPrice(value: price)
-    }
 }
 
 struct TotoView_Previews: PreviewProvider {

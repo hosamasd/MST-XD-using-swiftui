@@ -9,107 +9,153 @@ import SwiftUI
 
 struct HomeShopping: View {
     
-    @State var carts:[ShopItem] = [
+    @StateObject var vm = CartViewModel()
+
     
-        .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: "559$", count: 2),
-
-            .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: "559$", count: 1)
-        ,
-            .init(title: "Nike Sportswear T-Shirt", pic: "Mask Group 3", price: "69$", count: 1),
-
-            .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: "559$", count: 4),
-
-            .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: "559$", count: 5)
-    ]
     
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 1)
-
     
+    @State var selected = ShopItem(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.09, count: 2)
+    @State var show = false
+    @State var totalPrice = ""
     
     var body: some View {
         
-        VStack{
+        ZStack {
+            
             
             VStack{
-            
-            HStack {
                 
-              
-                
-                Spacer()
-                
-                Text("Shopping Cart")
-                    .font(.title2)
-                    .foregroundColor(.white)
-                
-                Spacer()
-                
-                if carts.count > 0 {
+                VStack{
                     
-                Image(systemName: "trash")
-                    .foregroundColor(.white)
-                
-                }
-            }
-            }
-            .padding()
-            .padding(.top,top)
-            .background(Color.blue)
-            
-            if carts.isEmpty {
-                
-                VStack {
-                    Spacer()
-                    EpmtyShopView()
-                    
-                    Spacer()
-                }
-                
-            }
-            else {
-                
-            
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                
-                Spacer()
-                    .frame(height:16)
-                
-                LazyVGrid(columns: columns,spacing: 20){
-                    
-                    // assigning name as ID...
-                    
-                    ForEach(carts){gradient in
+                    HStack {
                         
-                        ShopCartRow(ca:gradient)
+                        
+                        
+                        Spacer()
+                        
+                        Text("Shopping Cart")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                        if vm.carts.count > 0 {
                             
-//                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                            Image(systemName: "trash")
+                                .foregroundColor(.white)
+                            
+                        }
                     }
                 }
-//                .padding(.horizontal)
-                .padding(.bottom)
+                .padding()
+                .padding(.top,top)
+                .background(Color.blue)
+                
+                if vm.carts.isEmpty {
+                    
+                    VStack {
+                        Spacer()
+                        EpmtyShopView()
+                        
+                        Spacer()
+                    }
+                    
+                }
+                else {
+                    
+                    
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        
+                        Spacer()
+                            .frame(height:16)
+                        
+                        LazyVGrid(columns: columns,spacing: 20){
+                            
+                            // assigning name as ID...
+                            
+                            ForEach(vm.carts){gradient in
+                                
+                                ShopCartRow(ca:$vm.carts[getIndex(item: gradient)])
+                                    .onTapGesture(perform: {
+                                        withAnimation{
+                                            self.selected = gradient
+                                            show.toggle()
+                                        }
+                                    })
+                                
+                                //                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                            }
+                        }
+                        //                .padding(.horizontal)
+                        .padding(.bottom)
+                    }
+                    .background(Color.white)
+                    .padding(.horizontal,16)
+                    .padding(.top)
+                    .cornerRadius(8)
+                    .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                    
+                    TotoView(text:calculateTotalPrice())
+                        .padding(.bottom,20)
+                        .padding(.top)
+                    
+                    
+                    Spacer()
+                }
+                
             }
-            .background(Color.white)
-            .padding(.horizontal,16)
-            .padding(.top)
-            .cornerRadius(8)
-            .shadow(color: .gray, radius: 5, x: 2, y: 2)
+            //        .padding(.horizontal)
             
-            TotoView()
-                .padding(.bottom,20)
-                .padding(.top)
+            .background(Color("Color"))
+            //        .edgesIgnoringSafeArea(.all)
             
-            
-            Spacer()
+            if show {
+                VStack{
+                    
+                    Spacer()
+                    
+//                    AddMinusView(ca:$selected, show: $show )
+                    
+                    AddMinusView(ca:$vm.carts[getIndex(item: selected)], show: $show )
+                    
+                    
+                    Spacer()
+                    
+                }
+                .background(
+                    
+                    Color.black.opacity(0.3).ignoresSafeArea()
+                        .opacity(show ? 1 : 0)
+                        
+                        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                            withAnimation{show.toggle()}
+                        })
+                )
+                
+            }
         }
-            
-        }
-//        .padding(.horizontal)
-        
-        .background(Color("Color"))
         .edgesIgnoringSafeArea(.all)
+        .animation(.default)
+    }
+    
+    func calculateTotalPrice() ->String{
         
-//        EpmtyShopView()
+        var price : Float = 0
+        
+        vm.carts.forEach { (item) in
+            price += Float(item.count) * item.price
+        }
+        
+        return   getPrice(value: price)
+    }
+    
+    func getIndex(item: ShopItem)->Int{
+        
+        return vm.carts.firstIndex { (item1) -> Bool in
+            return item.id == item1.id
+        } ?? 0
     }
 }
 
