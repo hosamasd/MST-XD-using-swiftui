@@ -20,6 +20,9 @@
 		4E3C2A2F2601CC0900DD0962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2E2601CC0900DD0962 /* Assets.xcassets */; };
 		4E3C2A322601CC0900DD0962 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C2A312601CC0900DD0962 /* Preview Assets.xcassets */; };
 		4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C2A3D2601CC2900DD0962 /* Home.swift */; };
+		4EEF90A92601F9340030C1D8 /* HomeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90A82601F9340030C1D8 /* HomeDetail.swift */; };
+		4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90AF2601FBEE0030C1D8 /* Details.swift */; };
+		4EEF90B32601FCCA0030C1D8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90B22601FCCA0030C1D8 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		4E3C2A312601CC0900DD0962 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4E3C2A332601CC0900DD0962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E3C2A3D2601CC2900DD0962 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		4EEF90A82601F9340030C1D8 /* HomeDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetail.swift; sourceTree = "<group>"; };
+		4EEF90AF2601FBEE0030C1D8 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		4EEF90B22601FCCA0030C1D8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				4E037B582601E4BB00B24332 /* HomeScreen.swift */,
+				4EEF90A82601F9340030C1D8 /* HomeDetail.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -72,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				4E037B662601E9E000B24332 /* CategoryView.swift */,
+				4EEF90B22601FCCA0030C1D8 /* DetailView.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -80,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				4E037B622601E8D000B24332 /* Category.swift */,
+				4EEF90AF2601FBEE0030C1D8 /* Details.swift */,
 			);
 			path = home;
 			sourceTree = "<group>";
@@ -224,14 +233,17 @@
 				4E021D3D2601D43D00319894 /* PageInfo.swift in Sources */,
 				4E037B632601E8D000B24332 /* Category.swift in Sources */,
 				4E021D362601CE0900319894 /* LanguageRowView.swift in Sources */,
+				4EEF90B32601FCCA0030C1D8 /* DetailView.swift in Sources */,
 				4E021D3A2601D14D00319894 /* Filter.swift in Sources */,
 				4E021D322601CDFB00319894 /* welcome.swift in Sources */,
 				4E037B672601E9E000B24332 /* CategoryView.swift in Sources */,
 				4E3C2A2D2601CC0900DD0962 /* ContentView.swift in Sources */,
 				4E037B592601E4BB00B24332 /* HomeScreen.swift in Sources */,
+				4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */,
 				4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */,
 				4E021D422601D4B300319894 /* Board.swift in Sources */,
 				4E3C2A2B2601CC0900DD0962 /* MST_XDApp.swift in Sources */,
+				4EEF90A92601F9340030C1D8 /* HomeDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,9 +20,12 @@ struct HomeScreen: View {
        
         
     ]
+    @State var show = false
+    @State var selected = Category(title: "WELCOME        ", detail: "MEST EC is Premium Online Shopping Platform for Everyone..", pic: "mobile",color:Color("f"))
     
     var body: some View {
         
+        ZStack {
         VStack {
             
             HStack{
@@ -88,11 +91,24 @@ struct HomeScreen: View {
             ForEach(onBoard) {dd in
                 
                 CategoryView(cat: dd)
+                    .onTapGesture(perform: {
+                        withAnimation{
+                            self.selected=dd
+                            self.show.toggle()
+                        }
+                    })
             }
             .padding(.vertical,0)
             .padding(.horizontal,16)
             
             Spacer()
+            
+        }
+        
+            if show {
+                HomeDetail(cat: selected, show: $show)
+                    .transition(.move(edge: .bottom))
+            }
             
         }
         .background(Color("Color").edgesIgnoringSafeArea(.all))
