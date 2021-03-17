@@ -8,6 +8,7 @@
 import SwiftUI
 
 var top = UIApplication.shared.windows.first?.safeAreaInsets.top
+var bottom = UIApplication.shared.windows.first?.safeAreaInsets.bottom
 
 struct HomeDetail: View {
     
