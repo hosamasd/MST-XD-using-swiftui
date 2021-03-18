@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var te = ""
     var body: some View {
-        NotificationView()
+        AboutUsView()
 //        BuySuccessView()
 //        FinishCheckout(show: .constant(false), name: $te)
 //        CheckoutBuy(show: .constant(false), items: .constant([

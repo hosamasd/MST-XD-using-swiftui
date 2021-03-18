@@ -20,6 +20,10 @@
 		4E100F92260323610050CCCC /* NotyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F91260323610050CCCC /* NotyModel.swift */; };
 		4E100F95260324500050CCCC /* NotificationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F94260324500050CCCC /* NotificationRowView.swift */; };
 		4E100F98260326880050CCCC /* NotificationUpdateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F97260326880050CCCC /* NotificationUpdateRowView.swift */; };
+		4E100F9D26032A7D0050CCCC /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F9C26032A7D0050CCCC /* AboutUsView.swift */; };
+		4E100FA126032B220050CCCC /* AboutUsRorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100FA026032B220050CCCC /* AboutUsRorView.swift */; };
+		4E100FA426032E5C0050CCCC /* WhieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100FA326032E5C0050CCCC /* WhieListView.swift */; };
+		4E100FA7260330550050CCCC /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100FA6260330550050CCCC /* OrderHistoryView.swift */; };
 		4E3C2A2B2601CC0900DD0962 /* MST_XDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2A2601CC0900DD0962 /* MST_XDApp.swift */; };
 		4E3C2A2D2601CC0900DD0962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2C2601CC0900DD0962 /* ContentView.swift */; };
 		4E3C2A2F2601CC0900DD0962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2E2601CC0900DD0962 /* Assets.xcassets */; };
@@ -56,6 +60,10 @@
 		4E100F91260323610050CCCC /* NotyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotyModel.swift; sourceTree = "<group>"; };
 		4E100F94260324500050CCCC /* NotificationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRowView.swift; sourceTree = "<group>"; };
 		4E100F97260326880050CCCC /* NotificationUpdateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUpdateRowView.swift; sourceTree = "<group>"; };
+		4E100F9C26032A7D0050CCCC /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
+		4E100FA026032B220050CCCC /* AboutUsRorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsRorView.swift; sourceTree = "<group>"; };
+		4E100FA326032E5C0050CCCC /* WhieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhieListView.swift; sourceTree = "<group>"; };
+		4E100FA6260330550050CCCC /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
 		4E3C2A272601CC0900DD0962 /* MST XD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MST XD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3C2A2A2601CC0900DD0962 /* MST_XDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MST_XDApp.swift; sourceTree = "<group>"; };
 		4E3C2A2C2601CC0900DD0962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -152,6 +160,24 @@
 			path = notifications;
 			sourceTree = "<group>";
 		};
+		4E100F9A26032A610050CCCC /* about us */ = {
+			isa = PBXGroup;
+			children = (
+				4E100F9C26032A7D0050CCCC /* AboutUsView.swift */,
+				4E100FA326032E5C0050CCCC /* WhieListView.swift */,
+				4E100FA6260330550050CCCC /* OrderHistoryView.swift */,
+			);
+			path = "about us";
+			sourceTree = "<group>";
+		};
+		4E100F9B26032A6A0050CCCC /* about us */ = {
+			isa = PBXGroup;
+			children = (
+				4E100FA026032B220050CCCC /* AboutUsRorView.swift */,
+			);
+			path = "about us";
+			sourceTree = "<group>";
+		};
 		4E3C2A1E2601CC0900DD0962 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +220,7 @@
 		4E3C2A3A2601CC1200DD0962 /* SCENES */ = {
 			isa = PBXGroup;
 			children = (
+				4E100F9A26032A610050CCCC /* about us */,
 				4E100F872603220C0050CCCC /* notifications */,
 				4E43CF712602110E00286C38 /* shop */,
 				4E037B562601E4A900B24332 /* home */,
@@ -206,6 +233,7 @@
 		4E3C2A3B2601CC1700DD0962 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4E100F9B26032A6A0050CCCC /* about us */,
 				4E100F88260322160050CCCC /* notifications */,
 				4E5D0F7926024F7600BE2939 /* custom */,
 				4E43CF762602115900286C38 /* shop */,
@@ -387,15 +415,19 @@
 				4E43CF81260213ED00286C38 /* ShopCartRow.swift in Sources */,
 				4E021D3A2601D14D00319894 /* Filter.swift in Sources */,
 				4E100F8B2603222B0050CCCC /* NotificationView.swift in Sources */,
+				4E100F9D26032A7D0050CCCC /* AboutUsView.swift in Sources */,
 				4E021D322601CDFB00319894 /* welcome.swift in Sources */,
 				4E037B672601E9E000B24332 /* CategoryView.swift in Sources */,
+				4E100FA426032E5C0050CCCC /* WhieListView.swift in Sources */,
 				4E3C2A2D2601CC0900DD0962 /* ContentView.swift in Sources */,
+				4E100FA126032B220050CCCC /* AboutUsRorView.swift in Sources */,
 				4EE4449926022F6800C2F756 /* CartViewModel.swift in Sources */,
 				4E037B592601E4BB00B24332 /* HomeScreen.swift in Sources */,
 				4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */,
 				4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */,
 				4E5D0F712602444400BE2939 /* CheckoutBuy.swift in Sources */,
 				4E100F8F2603234A0050CCCC /* NotificationViewModel.swift in Sources */,
+				4E100FA7260330550050CCCC /* OrderHistoryView.swift in Sources */,
 				4E100F98260326880050CCCC /* NotificationUpdateRowView.swift in Sources */,
 				4EEF90B7260202200030C1D8 /* ProductDetail.swift in Sources */,
 				4E43CF8826021AAA00286C38 /* AddMinusView.swift in Sources */,

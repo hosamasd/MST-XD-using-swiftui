@@ -11,71 +11,71 @@ struct NotificationView: View {
     
     @State var showCongrate:Bool = false
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 1)
-@StateObject var vm = NotificationViewModel()
+    @StateObject var vm = NotificationViewModel()
     @State var selected = NotyModel(title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", detail: "Lorem Ipsum is simply dummy text of the print... ", date: "1", shows: "January  2, 2019 05:30")
     
     var body: some View {
         ZStack {
             
-        VStack{
-            
             VStack{
                 
-                HStack {
+                VStack{
                     
-                   
-                    
-                    Spacer()
-                    
-                    Text("Notifications")
-                        .font(.title2)
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    
+                    HStack {
                         
-                      
                         
-                }
-            }
-            .padding()
-            .padding(.top,top)
-            .background(Color.blue)
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                
-              
-//            ScrollView(.vertical, showsIndicators: false) {
-                
-                LazyVGrid(columns: columns,spacing: 0){
-                    
-                    // assigning name as ID...
-                    
-                    ForEach(vm.notifications){gradient in
                         
-                        NotificationRowView(ca: gradient)
-                            .onTapGesture(perform: {
-                                withAnimation{
-                                    self.selected=gradient
-                                    self.showCongrate.toggle()
-                                }
-                            })
-//                       . ShopCartRow(ca:$items[getIndex(item: gradient)])
+                        Spacer()
+                        
+                        Text("Notifications")
+                            .font(.title2)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                        
+                        
+                        
+                        
                     }
-                    .padding()
                 }
-            }
+                .padding()
+                .padding(.top,top)
+                .background(Color.blue)
+                
+                ScrollView(.vertical, showsIndicators: false) {
+                    
+                    
+                    //            ScrollView(.vertical, showsIndicators: false) {
+                    
+                    LazyVGrid(columns: columns,spacing: 0){
+                        
+                        // assigning name as ID...
+                        
+                        ForEach(vm.notifications){gradient in
+                            
+                            NotificationRowView(ca: gradient)
+                                .onTapGesture(perform: {
+                                    withAnimation{
+                                        self.selected=gradient
+                                        self.showCongrate.toggle()
+                                    }
+                                })
+                            //                       . ShopCartRow(ca:$items[getIndex(item: gradient)])
+                        }
+                        .padding()
+                    }
+                }
                 .background(Color.white)
                 .padding(.horizontal,16)
                 .padding(.top)
                 .padding(.bottom)
                 .cornerRadius(8)
-//                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                //                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+                
+                Spacer()
+            }
             
-            Spacer()
-        }
-            
-        .background(Color("Color"))
+            .background(Color("Color"))
             
             if showCongrate {
                 VStack{
@@ -84,14 +84,14 @@ struct NotificationView: View {
                     
                     HStack {
                         Spacer()
-                    NotificationUpdateRowView(ca: selected, show: $showCongrate)
-                        .frame(width:UIScreen.main.bounds.width-64)
+                        NotificationUpdateRowView(ca: selected, show: $showCongrate)
+                            .frame(width:UIScreen.main.bounds.width-64)
                         Spacer()
                     }
                     
                     //                    AddMinusView(ca:$selected, show: $show )
                     
-//                    BuySuccessView(show: $showCongrate)
+                    //                    BuySuccessView(show: $showCongrate)
                     
                     
                     Spacer()
@@ -108,8 +108,8 @@ struct NotificationView: View {
                 )
                 
             }
-        
-    }
+            
+        }
         .edgesIgnoringSafeArea(.all)
         .animation(.default)
     }
