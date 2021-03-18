@@ -15,6 +15,11 @@
 		4E037B592601E4BB00B24332 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E037B582601E4BB00B24332 /* HomeScreen.swift */; };
 		4E037B632601E8D000B24332 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E037B622601E8D000B24332 /* Category.swift */; };
 		4E037B672601E9E000B24332 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E037B662601E9E000B24332 /* CategoryView.swift */; };
+		4E100F8B2603222B0050CCCC /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F8A2603222B0050CCCC /* NotificationView.swift */; };
+		4E100F8F2603234A0050CCCC /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F8E2603234A0050CCCC /* NotificationViewModel.swift */; };
+		4E100F92260323610050CCCC /* NotyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F91260323610050CCCC /* NotyModel.swift */; };
+		4E100F95260324500050CCCC /* NotificationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F94260324500050CCCC /* NotificationRowView.swift */; };
+		4E100F98260326880050CCCC /* NotificationUpdateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F97260326880050CCCC /* NotificationUpdateRowView.swift */; };
 		4E3C2A2B2601CC0900DD0962 /* MST_XDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2A2601CC0900DD0962 /* MST_XDApp.swift */; };
 		4E3C2A2D2601CC0900DD0962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2C2601CC0900DD0962 /* ContentView.swift */; };
 		4E3C2A2F2601CC0900DD0962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2E2601CC0900DD0962 /* Assets.xcassets */; };
@@ -46,6 +51,11 @@
 		4E037B582601E4BB00B24332 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		4E037B622601E8D000B24332 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4E037B662601E9E000B24332 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		4E100F8A2603222B0050CCCC /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		4E100F8E2603234A0050CCCC /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		4E100F91260323610050CCCC /* NotyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotyModel.swift; sourceTree = "<group>"; };
+		4E100F94260324500050CCCC /* NotificationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationRowView.swift; sourceTree = "<group>"; };
+		4E100F97260326880050CCCC /* NotificationUpdateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUpdateRowView.swift; sourceTree = "<group>"; };
 		4E3C2A272601CC0900DD0962 /* MST XD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MST XD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3C2A2A2601CC0900DD0962 /* MST_XDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MST_XDApp.swift; sourceTree = "<group>"; };
 		4E3C2A2C2601CC0900DD0962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +127,31 @@
 			path = home;
 			sourceTree = "<group>";
 		};
+		4E100F872603220C0050CCCC /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				4E100F8A2603222B0050CCCC /* NotificationView.swift */,
+			);
+			path = notifications;
+			sourceTree = "<group>";
+		};
+		4E100F88260322160050CCCC /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				4E100F94260324500050CCCC /* NotificationRowView.swift */,
+				4E100F97260326880050CCCC /* NotificationUpdateRowView.swift */,
+			);
+			path = notifications;
+			sourceTree = "<group>";
+		};
+		4E100F892603221A0050CCCC /* notifications */ = {
+			isa = PBXGroup;
+			children = (
+				4E100F91260323610050CCCC /* NotyModel.swift */,
+			);
+			path = notifications;
+			sourceTree = "<group>";
+		};
 		4E3C2A1E2601CC0900DD0962 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +194,7 @@
 		4E3C2A3A2601CC1200DD0962 /* SCENES */ = {
 			isa = PBXGroup;
 			children = (
+				4E100F872603220C0050CCCC /* notifications */,
 				4E43CF712602110E00286C38 /* shop */,
 				4E037B562601E4A900B24332 /* home */,
 				4E021D302601CDF000319894 /* welcome */,
@@ -170,6 +206,7 @@
 		4E3C2A3B2601CC1700DD0962 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4E100F88260322160050CCCC /* notifications */,
 				4E5D0F7926024F7600BE2939 /* custom */,
 				4E43CF762602115900286C38 /* shop */,
 				4E037B572601E4AF00B24332 /* home */,
@@ -182,6 +219,7 @@
 		4E3C2A3C2601CC1C00DD0962 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				4E100F892603221A0050CCCC /* notifications */,
 				4E43CF7B2602123900286C38 /* shop */,
 				4E037B5C2601E88700B24332 /* home */,
 				4E021D412601D4B300319894 /* Board.swift */,
@@ -249,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				4EE4449826022F6800C2F756 /* CartViewModel.swift */,
+				4E100F8E2603234A0050CCCC /* NotificationViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -344,8 +383,10 @@
 				4E037B632601E8D000B24332 /* Category.swift in Sources */,
 				4E021D362601CE0900319894 /* LanguageRowView.swift in Sources */,
 				4EEF90B32601FCCA0030C1D8 /* DetailView.swift in Sources */,
+				4E100F95260324500050CCCC /* NotificationRowView.swift in Sources */,
 				4E43CF81260213ED00286C38 /* ShopCartRow.swift in Sources */,
 				4E021D3A2601D14D00319894 /* Filter.swift in Sources */,
+				4E100F8B2603222B0050CCCC /* NotificationView.swift in Sources */,
 				4E021D322601CDFB00319894 /* welcome.swift in Sources */,
 				4E037B672601E9E000B24332 /* CategoryView.swift in Sources */,
 				4E3C2A2D2601CC0900DD0962 /* ContentView.swift in Sources */,
@@ -354,12 +395,15 @@
 				4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */,
 				4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */,
 				4E5D0F712602444400BE2939 /* CheckoutBuy.swift in Sources */,
+				4E100F8F2603234A0050CCCC /* NotificationViewModel.swift in Sources */,
+				4E100F98260326880050CCCC /* NotificationUpdateRowView.swift in Sources */,
 				4EEF90B7260202200030C1D8 /* ProductDetail.swift in Sources */,
 				4E43CF8826021AAA00286C38 /* AddMinusView.swift in Sources */,
 				4E021D422601D4B300319894 /* Board.swift in Sources */,
 				4E43CF7D2602124300286C38 /* ShopItem.swift in Sources */,
 				4E3C2A2B2601CC0900DD0962 /* MST_XDApp.swift in Sources */,
 				4E43CF732602111B00286C38 /* HomeShopping.swift in Sources */,
+				4E100F92260323610050CCCC /* NotyModel.swift in Sources */,
 				4E43CF852602166200286C38 /* TotoView.swift in Sources */,
 				4E5D0F7726024BB500BE2939 /* FinishCheckout.swift in Sources */,
 				4E5D0F7B26024F7E00BE2939 /* FloatingTextField.swift in Sources */,

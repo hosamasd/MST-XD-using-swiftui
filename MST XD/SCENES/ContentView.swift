@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @State var te = ""
     var body: some View {
-        
+        NotificationView()
 //        BuySuccessView()
-        FinishCheckout(show: .constant(false), name: $te)
+//        FinishCheckout(show: .constant(false), name: $te)
 //        CheckoutBuy(show: .constant(false), items: .constant([
 //            .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.5, count: 2),
 //
