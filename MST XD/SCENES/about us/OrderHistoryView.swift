@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrderHistoryView: View {
     
-    @StateObject var vm = CartViewModel()
+    @StateObject var vm = HistoryViewModel()
     @Binding var dismiss:Bool
     
     
@@ -64,13 +64,13 @@ struct OrderHistoryView: View {
                     Spacer()
                         .frame(height:16)
                     
-                    LazyVGrid(columns: columns,spacing: 20){
+                    LazyVGrid(columns: columns,spacing: 0){
                         
                         // assigning name as ID...
                         
                         ForEach(vm.carts){gradient in
                             
-                          
+                            HistoryRowView(ca: gradient)
                             
                             
                             //                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
@@ -79,7 +79,7 @@ struct OrderHistoryView: View {
                     //                .padding(.horizontal)
                     .padding(.bottom)
                 }
-                .background(Color.white)
+//                .background(Color.white)
                 .padding(.horizontal,16)
                 .padding(.top)
                 .cornerRadius(8)

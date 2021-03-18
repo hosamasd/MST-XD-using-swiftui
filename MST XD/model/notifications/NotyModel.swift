@@ -15,3 +15,10 @@ struct NotyModel:Identifiable {
     
 }
 
+struct NewsInfoModel:Identifiable {
+    var id = UUID().uuidString
+    
+    var title,detail : String
+    var date,shows,pic:String
+    
+}
