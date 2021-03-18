@@ -22,30 +22,32 @@ struct HomeScreen: View {
     ]
     @State var show = false
     @State var selected = Category(title: "WELCOME        ", detail: "MEST EC is Premium Online Shopping Platform for Everyone..", pic: "mobile",color:Color("f"))
-    
+    @State var txt = ""
     var body: some View {
         
         ZStack {
+            
+            ScrollView (showsIndicators:false) {
+                
+            
         VStack {
             
             HStack{
-                
+                   
                 ZStack {
                 RoundedRectangle(cornerRadius: 8)
-                    
+
                     .fill(Color.white)
                     .frame(height:64)
-                
-                    
+
+
                     TextField("Search",text:$text)
                         .font(.title)
                         .padding(.horizontal)
                 }
                 .background(Color.white)
-                .shadow(color: .gray, radius: 2, x: 1, y: 1)
-//                .shadow(color: .gray, radius: 1, x: 2, y: 2)
+                .cornerRadius(10)
                 .padding(.trailing)
-//                Spacer()
            
                 
             Button(action: {}, label: {
@@ -72,21 +74,28 @@ struct HomeScreen: View {
                
                 Text("What's New?")
                     .font(.title)
+                    .fontWeight(.bold)
                     .foregroundColor(.black)
                 Spacer()
             })
             .padding(.horizontal)
             .padding(.vertical)
             
+            TopView()
+                .padding(.bottom,40)
+            
+            
             HStack( content: {
                
                 Text("Categories")
                     .font(.title)
+                    .fontWeight(.bold)
                     .foregroundColor(.black)
                 Spacer()
             })
             .padding(.horizontal)
             .padding(.vertical)
+            .padding(.top)
             
             ForEach(onBoard) {dd in
                 
@@ -101,9 +110,10 @@ struct HomeScreen: View {
             .padding(.vertical,0)
             .padding(.horizontal,16)
             
-            Spacer()
+//            Spacer()
             
         }
+            }
         
             if show {
                 HomeDetail(cat: selected, show: $show)

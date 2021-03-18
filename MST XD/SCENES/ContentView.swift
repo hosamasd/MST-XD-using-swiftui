@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     @State var te = ""
     var body: some View {
-        AboutUsView()
+        
+//        AboutUsView()
 //        SettingsView( dismiss: .constant(false))
 //        BuySuccessView()
 //        FinishCheckout(show: .constant(false), name: $te)
@@ -24,7 +25,7 @@ struct ContentView: View {
 //        ]))
 //        HomeShopping()
 //        ProductDetail(cat:         Details(title: "iPhone 8 Plus\n 64GB Gold", pic: "Mask Group 3", price: "579$"), show: .constant(false))
-//        HomeScreen()
+        HomeScreen()
         
 //        HomeDetail(cat:  Category(title: "WELCOME        ", detail: "MEST EC is Premium Online Shopping Platform for Everyone..", pic: "mobile",color:Color("f")))
     }
