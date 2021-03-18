@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AboutCicrleRowView: View {
     @Binding var show:Bool
-    
+    @ObservedObject var vm = MainViewModel()
     var body: some View {
         
         ZStack(alignment: Alignment(horizontal: .center, vertical: .top), content: {
@@ -37,7 +37,9 @@ struct AboutCicrleRowView: View {
                     Divider()
                     
                     Button(action: {
-                        withAnimation{show.toggle()}
+                        withAnimation{show.toggle()
+                            vm.hideTab.toggle()
+                        }
                     }, label: {
                         Text("OK")
                     })

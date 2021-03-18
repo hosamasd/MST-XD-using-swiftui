@@ -14,6 +14,7 @@ struct AboutUsView: View {
     @State var showThird = false
     @State var showForth = false
     @State var showCongrate:Bool = false
+    @EnvironmentObject var vmmm:MainViewModel
 
     var body: some View {
         
@@ -84,6 +85,7 @@ struct AboutUsView: View {
                 .onTapGesture {
                     withAnimation{
                         self.showCongrate.toggle()
+                        vmmm.hideTab.toggle()
                     }
                 }
             
@@ -117,7 +119,7 @@ struct AboutUsView: View {
                     
                     //                    AddMinusView(ca:$selected, show: $show )
                     
-                    AboutCicrleRowView(show: $showCongrate)
+                    AboutCicrleRowView(show: $showCongrate,vm:vmmm)
                     
                     
                     Spacer()
@@ -129,7 +131,9 @@ struct AboutUsView: View {
                         .opacity(showCongrate ? 1 : 0)
                         
                         .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                            withAnimation{showCongrate.toggle()}
+                            withAnimation{showCongrate.toggle()
+                                vmmm.hideTab.toggle()
+                            }
                         })
                 )
                 

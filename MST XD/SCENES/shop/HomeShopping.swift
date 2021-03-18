@@ -19,6 +19,8 @@ struct HomeShopping: View {
     @State var show = false
     @State var totalPrice = ""
     
+    @EnvironmentObject var vmmm:MainViewModel
+    
     var body: some View {
         
         ZStack {
@@ -82,6 +84,7 @@ struct HomeShopping: View {
                                         withAnimation{
                                             self.selected = gradient
                                             show.toggle()
+                                            vmmm.hideTab.toggle()
                                         }
                                     })
                                 
@@ -118,7 +121,7 @@ struct HomeShopping: View {
                     
 //                    AddMinusView(ca:$selected, show: $show )
                     
-                    AddMinusView(ca:$vm.carts[getIndex(item: selected)], show: $show )
+                    AddMinusView(ca:$vm.carts[getIndex(item: selected)], show: $show ,vm: vmmm)
                     
                     
                     Spacer()
@@ -126,18 +129,22 @@ struct HomeShopping: View {
                 }
                 .background(
                     
-                    Color.black.opacity(0.3).ignoresSafeArea()
+                    Color.black.opacity(0.3).edgesIgnoringSafeArea(.all)
                         .opacity(show ? 1 : 0)
                         
                         .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                            withAnimation{show.toggle()}
+                            withAnimation{show.toggle()
+                                vmmm.hideTab.toggle()
+                            }
                         })
                 )
                 
             }
         }
+        .padding(.bottom)
         .edgesIgnoringSafeArea(.all)
         .animation(.default)
+       
     }
     
     func calculateTotalPrice() ->String{

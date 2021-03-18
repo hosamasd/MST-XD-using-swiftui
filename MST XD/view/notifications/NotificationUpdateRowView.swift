@@ -11,7 +11,7 @@ struct NotificationUpdateRowView: View {
     
     let ca: NotyModel
     @Binding var show:Bool
-
+@ObservedObject var vm = MainViewModel()
     var body: some View {
        
         VStack {
@@ -43,7 +43,9 @@ struct NotificationUpdateRowView: View {
                 Spacer()
                 
                 Button(action: {
-                    withAnimation{show.toggle()}
+                    withAnimation{show.toggle()
+                        vm.hideTab.toggle()
+                    }
                 }, label: {
                     Text("Cancel")
                         .foregroundColor(.blue)
@@ -56,7 +58,9 @@ struct NotificationUpdateRowView: View {
                 Spacer()
                 
                 Button(action: {
-                    withAnimation{show.toggle()}
+                    withAnimation{show.toggle()
+                        vm.hideTab.toggle()
+                    }
                 }, label: {
                     Text("OK")
                         .foregroundColor(.blue)

@@ -121,6 +121,7 @@ struct HomeScreen: View {
             }
             
         }
+        .padding(.bottom)
         .background(Color("Color").edgesIgnoringSafeArea(.all))
     }
 }

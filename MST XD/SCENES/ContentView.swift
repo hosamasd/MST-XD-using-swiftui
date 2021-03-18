@@ -25,7 +25,7 @@ struct ContentView: View {
 //        ]))
 //        HomeShopping()
 //        ProductDetail(cat:         Details(title: "iPhone 8 Plus\n 64GB Gold", pic: "Mask Group 3", price: "579$"), show: .constant(false))
-        HomeScreen()
+        MainView()
         
 //        HomeDetail(cat:  Category(title: "WELCOME        ", detail: "MEST EC is Premium Online Shopping Platform for Everyone..", pic: "mobile",color:Color("f")))
     }

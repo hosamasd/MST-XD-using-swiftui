@@ -13,7 +13,8 @@ struct NotificationView: View {
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 1)
     @StateObject var vm = NotificationViewModel()
     @State var selected = NotyModel(title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", detail: "Lorem Ipsum is simply dummy text of the print... ", date: "1", shows: "January  2, 2019 05:30")
-    
+    @EnvironmentObject var vmmm:MainViewModel
+
     var body: some View {
         ZStack {
             
@@ -58,6 +59,7 @@ struct NotificationView: View {
                                     withAnimation{
                                         self.selected=gradient
                                         self.showCongrate.toggle()
+                                        vmmm.hideTab.toggle()
                                     }
                                 })
                             //                       . ShopCartRow(ca:$items[getIndex(item: gradient)])
@@ -84,7 +86,7 @@ struct NotificationView: View {
                     
                     HStack {
                         Spacer()
-                        NotificationUpdateRowView(ca: selected, show: $showCongrate)
+                        NotificationUpdateRowView(ca: selected, show: $showCongrate,vm:vmmm)
                             .frame(width:UIScreen.main.bounds.width-64)
                         Spacer()
                     }
@@ -103,7 +105,9 @@ struct NotificationView: View {
                         .opacity(showCongrate ? 1 : 0)
                         
                         .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
-                            withAnimation{showCongrate.toggle()}
+                            withAnimation{showCongrate.toggle()
+                                vmmm.hideTab.toggle()
+                            }
                         })
                 )
                 

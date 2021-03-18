@@ -11,7 +11,7 @@ struct AddMinusView: View {
     
     @Binding var ca:ShopItem
     @Binding var show:Bool
-    
+    @ObservedObject var vm=MainViewModel()
     var body: some View {
         
         
@@ -97,7 +97,9 @@ struct AddMinusView: View {
                 Spacer()
                 
                 Button(action: {
-                    withAnimation{show.toggle()}
+                    withAnimation{show.toggle()
+                        vm.hideTab.toggle()
+                    }
                 }, label: {
                     Text("Cancel")
                         .foregroundColor(.blue)
@@ -110,7 +112,10 @@ struct AddMinusView: View {
                 Spacer()
                 
                 Button(action: {
-                    withAnimation{show.toggle()}
+                    withAnimation{
+                        show.toggle()
+                        vm.hideTab.toggle()
+                    }
                 }, label: {
                     Text("OK")
                         .foregroundColor(.blue)
