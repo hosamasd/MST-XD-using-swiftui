@@ -30,6 +30,9 @@
 		4E1A0CBC260341B0002DC3D4 /* NewRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A0CBB260341B0002DC3D4 /* NewRowView.swift */; };
 		4E1A0CBF2603445F002DC3D4 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A0CBE2603445F002DC3D4 /* NewsViewModel.swift */; };
 		4E1A0CC326034575002DC3D4 /* NewsInfoUpdateRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A0CC226034575002DC3D4 /* NewsInfoUpdateRowView.swift */; };
+		4E1A0CC7260347FB002DC3D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A0CC6260347FB002DC3D4 /* SettingsView.swift */; };
+		4E1A0CCA260349F3002DC3D4 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A0CC9260349F3002DC3D4 /* SettingsRowView.swift */; };
+		4E1A0CCD26034DE0002DC3D4 /* AboutCicrleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A0CCC26034DE0002DC3D4 /* AboutCicrleRowView.swift */; };
 		4E3C2A2B2601CC0900DD0962 /* MST_XDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2A2601CC0900DD0962 /* MST_XDApp.swift */; };
 		4E3C2A2D2601CC0900DD0962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2C2601CC0900DD0962 /* ContentView.swift */; };
 		4E3C2A2F2601CC0900DD0962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E3C2A2E2601CC0900DD0962 /* Assets.xcassets */; };
@@ -76,6 +79,9 @@
 		4E1A0CBB260341B0002DC3D4 /* NewRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRowView.swift; sourceTree = "<group>"; };
 		4E1A0CBE2603445F002DC3D4 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		4E1A0CC226034575002DC3D4 /* NewsInfoUpdateRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInfoUpdateRowView.swift; sourceTree = "<group>"; };
+		4E1A0CC6260347FB002DC3D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4E1A0CC9260349F3002DC3D4 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		4E1A0CCC26034DE0002DC3D4 /* AboutCicrleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCicrleRowView.swift; sourceTree = "<group>"; };
 		4E3C2A272601CC0900DD0962 /* MST XD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MST XD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3C2A2A2601CC0900DD0962 /* MST_XDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MST_XDApp.swift; sourceTree = "<group>"; };
 		4E3C2A2C2601CC0900DD0962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -179,6 +185,7 @@
 				4E100FA326032E5C0050CCCC /* WhieListView.swift */,
 				4E100FA6260330550050CCCC /* OrderHistoryView.swift */,
 				4E1A0CB826034157002DC3D4 /* NewsInfoView.swift */,
+				4E1A0CC6260347FB002DC3D4 /* SettingsView.swift */,
 			);
 			path = "about us";
 			sourceTree = "<group>";
@@ -187,7 +194,9 @@
 			isa = PBXGroup;
 			children = (
 				4E100FA026032B220050CCCC /* AboutUsRorView.swift */,
+				4E1A0CC9260349F3002DC3D4 /* SettingsRowView.swift */,
 				4E1A0CAD26033EE7002DC3D4 /* HistoryRowView.swift */,
+				4E1A0CCC26034DE0002DC3D4 /* AboutCicrleRowView.swift */,
 				4E1A0CC12603455C002DC3D4 /* news */,
 			);
 			path = "about us";
@@ -440,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E021D3D2601D43D00319894 /* PageInfo.swift in Sources */,
+				4E1A0CCA260349F3002DC3D4 /* SettingsRowView.swift in Sources */,
 				4EFF5B972603156000BD7621 /* BuySuccessView.swift in Sources */,
 				4E43CF782602116A00286C38 /* EpmtyShopView.swift in Sources */,
 				4E037B632601E8D000B24332 /* Category.swift in Sources */,
@@ -457,9 +467,11 @@
 				4E3C2A2D2601CC0900DD0962 /* ContentView.swift in Sources */,
 				4E1A0CB926034157002DC3D4 /* NewsInfoView.swift in Sources */,
 				4E100FA126032B220050CCCC /* AboutUsRorView.swift in Sources */,
+				4E1A0CCD26034DE0002DC3D4 /* AboutCicrleRowView.swift in Sources */,
 				4EE4449926022F6800C2F756 /* CartViewModel.swift in Sources */,
 				4E037B592601E4BB00B24332 /* HomeScreen.swift in Sources */,
 				4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */,
+				4E1A0CC7260347FB002DC3D4 /* SettingsView.swift in Sources */,
 				4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */,
 				4E5D0F712602444400BE2939 /* CheckoutBuy.swift in Sources */,
 				4E1A0CBC260341B0002DC3D4 /* NewRowView.swift in Sources */,

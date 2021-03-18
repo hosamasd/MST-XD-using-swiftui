@@ -13,7 +13,8 @@ struct AboutUsView: View {
     @State var showSecond = false
     @State var showThird = false
     @State var showForth = false
-    
+    @State var showCongrate:Bool = false
+
     var body: some View {
         
         ZStack {
@@ -60,6 +61,11 @@ struct AboutUsView: View {
                     }
                 }
             AboutUsRorView(name: "News Info", image: "news")
+                .onTapGesture {
+                    withAnimation{
+                        self.showThird.toggle()
+                    }
+                }
             
             Spacer()
                 .frame(height:60)
@@ -67,11 +73,19 @@ struct AboutUsView: View {
             AboutUsRorView(name: "Instructions", image: "instructions")
             
             AboutUsRorView(name: "Settings", image: "settings")
-            
+                .onTapGesture {
+                    withAnimation{
+                        self.showForth.toggle()
+                    }
+                }
             AboutUsRorView(name: "Rate", image: "wishlist")
             
             AboutUsRorView(name: "About", image: "history")
-            
+                .onTapGesture {
+                    withAnimation{
+                        self.showCongrate.toggle()
+                    }
+                }
             
             Spacer(minLength: 0)
         }
@@ -84,6 +98,41 @@ struct AboutUsView: View {
             if showSecond {
                 OrderHistoryView(dismiss: $showSecond)
                     .transition(.move(edge: .bottom))
+            }
+            
+            if showThird {
+                NewsInfoView(dismiss: $showThird)
+                    .transition(.move(edge: .bottom))
+            }
+            
+            if showForth {
+                SettingsView(dismiss: $showForth)
+                    .transition(.move(edge: .bottom))
+            }
+            
+            if showCongrate {
+                VStack{
+                    
+                    Spacer()
+                    
+                    //                    AddMinusView(ca:$selected, show: $show )
+                    
+                    AboutCicrleRowView(show: $showCongrate)
+                    
+                    
+                    Spacer()
+                    
+                }
+                .background(
+                    
+                    Color.black.opacity(0.3).ignoresSafeArea()
+                        .opacity(showCongrate ? 1 : 0)
+                        
+                        .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
+                            withAnimation{showCongrate.toggle()}
+                        })
+                )
+                
             }
         
         }
