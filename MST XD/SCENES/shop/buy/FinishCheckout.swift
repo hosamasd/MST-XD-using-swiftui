@@ -9,9 +9,10 @@ import SwiftUI
 
 struct FinishCheckout: View {
     @Binding var show:Bool
-    @Binding var name:String
+    @State var name:String = ""
     @State var showCongrate:Bool = false
-    
+    @EnvironmentObject var vmmm:MainViewModel
+
     var body: some View {
         
         ZStack {
@@ -22,7 +23,10 @@ struct FinishCheckout: View {
                     
                     HStack {
                         
-                        Button(action: {withAnimation{show.toggle()}}, label: {
+                        Button(action: {withAnimation{
+                            show.toggle()
+//                            vmmm.hideTab.toggle()
+                        }}, label: {
                             
                             Image(systemName: "chevron.backward")
                                 .foregroundColor(.white)
@@ -140,6 +144,6 @@ struct FinishCheckout: View {
 
 struct FinishCheckout_Previews: PreviewProvider {
     static var previews: some View {
-        FinishCheckout(show: .constant(false), name: .constant("name"))
+        FinishCheckout(show: .constant(false))
     }
 }

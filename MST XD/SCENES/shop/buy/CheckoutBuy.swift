@@ -10,8 +10,17 @@ import SwiftUI
 struct CheckoutBuy: View {
     
     @Binding var show:Bool
-    @Binding var items:[ShopItem]
+    @State var items:[ShopItem] = [
+        .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.5, count: 2),
+        
+        .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.9, count: 1),
+        .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.5, count: 2),
+        
+        .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.9, count: 1)
+    ]
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 1)
+    @State var showDetail:Bool = false
+    @EnvironmentObject var vmmm:MainViewModel
 
     var body: some View {
         
@@ -23,7 +32,9 @@ struct CheckoutBuy: View {
                 
                 HStack {
                     
-                    Button(action: {withAnimation{show.toggle()}}, label: {
+                    Button(action: {withAnimation{show.toggle()
+                        vmmm.hideTab.toggle()
+                    }}, label: {
                         
                         Image(systemName: "chevron.backward")
                             .foregroundColor(.white)
@@ -145,6 +156,7 @@ struct CheckoutBuy: View {
             
             Button(action: {
                 withAnimation{
+                    showDetail.toggle()
 //                    self.selection = "DISCOVER PRODUCT"
                     //                shoeSizeView = true
                 }
@@ -167,6 +179,11 @@ struct CheckoutBuy: View {
             
         }
         .background(Color("Color"))
+            
+            if showDetail {
+                FinishCheckout(show: $showDetail)
+                    .transition(.move(edge: .bottom))
+            }
         
     }
         .edgesIgnoringSafeArea(.all)
@@ -181,15 +198,3 @@ struct CheckoutBuy: View {
     }
 }
 
-struct CheckoutBuy_Previews: PreviewProvider {
-    static var previews: some View {
-        CheckoutBuy(show: .constant(false), items: .constant([
-            .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.5, count: 2),
-            
-            .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.9, count: 1),
-            .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.5, count: 2),
-            
-            .init(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.9, count: 1)
-        ]))
-    }
-}

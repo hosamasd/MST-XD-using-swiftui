@@ -16,7 +16,7 @@ struct MainView: View {
         NavigationView{
             
             
-            VStack{
+            VStack(spacing:-8){
                 
                 
                 if self.selected == "Home"{
@@ -43,13 +43,38 @@ struct MainView: View {
                 
                 if !vm.hideTab {
                 RabBarView(selected: $selected)
+                    .frame(height:60)
+                    .background(
+                        
+                        !vm.makeBlue ? Color.clear : Color.black.opacity(0.3)
+                        
+//                        Color.black.opacity(0.3)
+                            .opacity(vm.hideTab ? 1 : 0)
+                    )
             }
             }
+//            .background(Color.red)
+            .background(
+                vm.makeBlue ?
+                    Color.black.opacity(0.2)
+                    .edgesIgnoringSafeArea(.all)
+
+
+            //opacity(0.3)
+                :
+                    Color.clear.edgesIgnoringSafeArea(.all)
+            )
+            
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             
         }
+//        .ignoresSafeArea(.all, edges: .bottom)
+//        .background(Color.red.opacity(0.06).ignoresSafeArea(.all, edges: .all))
+//        .padding(.bottom , bottom != 0 ? 15 : 0)
+       
+
     }
 }
 

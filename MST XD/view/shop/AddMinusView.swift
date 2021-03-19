@@ -98,7 +98,7 @@ struct AddMinusView: View {
                 
                 Button(action: {
                     withAnimation{show.toggle()
-                        vm.hideTab.toggle()
+                        vm.makeBlue.toggle()
                     }
                 }, label: {
                     Text("Cancel")
@@ -114,7 +114,7 @@ struct AddMinusView: View {
                 Button(action: {
                     withAnimation{
                         show.toggle()
-                        vm.hideTab.toggle()
+                        vm.makeBlue.toggle()
                     }
                 }, label: {
                     Text("OK")

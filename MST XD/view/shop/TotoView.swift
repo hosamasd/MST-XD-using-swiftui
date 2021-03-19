@@ -10,8 +10,8 @@ import SwiftUI
 struct TotoView: View {
     
     var text:String
-    
-    
+    @Binding var show:Bool
+    @ObservedObject var vm = MainViewModel()
     var body: some View {
         VStack{
             
@@ -35,6 +35,8 @@ struct TotoView: View {
                 
                 Button(action: {
                     withAnimation{
+                        show.toggle()
+                        vm.hideTab.toggle()
 //                        self.selection = "DISCOVER PRODUCT"
                         //                shoeSizeView = true
                     }

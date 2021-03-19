@@ -20,7 +20,8 @@ struct HomeShopping: View {
     @State var totalPrice = ""
     
     @EnvironmentObject var vmmm:MainViewModel
-    
+    @State var showDetail:Bool = false
+
     var body: some View {
         
         ZStack {
@@ -84,7 +85,7 @@ struct HomeShopping: View {
                                         withAnimation{
                                             self.selected = gradient
                                             show.toggle()
-                                            vmmm.hideTab.toggle()
+                                            vmmm.makeBlue.toggle()
                                         }
                                     })
                                 
@@ -94,13 +95,13 @@ struct HomeShopping: View {
                         //                .padding(.horizontal)
                         .padding(.bottom)
                     }
-                    .background(Color.white)
+//                    .background(Color.white)
                     .padding(.horizontal,16)
                     .padding(.top)
                     .cornerRadius(8)
-                    .shadow(color: .gray, radius: 5, x: 2, y: 2)
+//                    .shadow(color: .gray, radius: 5, x: 2, y: 2)
                     
-                    TotoView(text:calculateTotalPrice())
+                    TotoView(text:calculateTotalPrice(), show: $showDetail,vm: vmmm)
                         .padding(.bottom,20)
                         .padding(.top)
                     
@@ -134,12 +135,18 @@ struct HomeShopping: View {
                         
                         .onTapGesture(count: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/, perform: {
                             withAnimation{show.toggle()
-                                vmmm.hideTab.toggle()
+                                vmmm.makeBlue.toggle()
                             }
                         })
                 )
                 
             }
+            
+            if showDetail {
+                CheckoutBuy(show: $showDetail)
+                    .transition(.move(edge: .bottom))
+            }
+            
         }
         .padding(.bottom)
         .edgesIgnoringSafeArea(.all)
