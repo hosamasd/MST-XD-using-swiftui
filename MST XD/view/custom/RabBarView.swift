@@ -71,7 +71,7 @@ struct RabBarView: View {
 
 struct RabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
-//        RabBarView( selected: .constant("Home"))
+//        MainView()
+        RabBarView( selected: .constant("Home"))
     }
 }

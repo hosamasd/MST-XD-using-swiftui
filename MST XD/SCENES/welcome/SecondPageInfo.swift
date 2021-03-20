@@ -124,6 +124,9 @@ struct SecondPageInfo: View {
             
         }
         .edgesIgnoringSafeArea(.top)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

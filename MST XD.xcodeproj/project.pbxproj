@@ -17,6 +17,8 @@
 		4E037B672601E9E000B24332 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E037B662601E9E000B24332 /* CategoryView.swift */; };
 		4E0E3F432606182400DF7CE8 /* SecondPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E3F422606182400DF7CE8 /* SecondPageInfo.swift */; };
 		4E0E3F4726061EA800DF7CE8 /* SecondAboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E3F4626061EA800DF7CE8 /* SecondAboutUsView.swift */; };
+		4E0E3F4A2606222E00DF7CE8 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E3F492606222E00DF7CE8 /* Splash.swift */; };
+		4E0E3F4F2606227300DF7CE8 /* TextShimmer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E3F4E2606227300DF7CE8 /* TextShimmer.swift */; };
 		4E0FA825260362A100229B6A /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0FA824260362A100229B6A /* TopView.swift */; };
 		4E0FA829260365AF00229B6A /* TopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0FA828260365AF00229B6A /* TopModel.swift */; };
 		4E100F8B2603222B0050CCCC /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F8A2603222B0050CCCC /* NotificationView.swift */; };
@@ -78,6 +80,8 @@
 		4E037B662601E9E000B24332 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		4E0E3F422606182400DF7CE8 /* SecondPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageInfo.swift; sourceTree = "<group>"; };
 		4E0E3F4626061EA800DF7CE8 /* SecondAboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAboutUsView.swift; sourceTree = "<group>"; };
+		4E0E3F492606222E00DF7CE8 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		4E0E3F4E2606227300DF7CE8 /* TextShimmer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextShimmer.swift; sourceTree = "<group>"; };
 		4E0FA824260362A100229B6A /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		4E0FA828260365AF00229B6A /* TopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopModel.swift; sourceTree = "<group>"; };
 		4E100F8A2603222B0050CCCC /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 				4E3C2A3D2601CC2900DD0962 /* Home.swift */,
 				4E021D3C2601D43D00319894 /* PageInfo.swift */,
 				4E0E3F422606182400DF7CE8 /* SecondPageInfo.swift */,
+				4E0E3F492606222E00DF7CE8 /* Splash.swift */,
 			);
 			path = welcome;
 			sourceTree = "<group>";
@@ -178,6 +183,14 @@
 				4E0FA828260365AF00229B6A /* TopModel.swift */,
 			);
 			path = home;
+			sourceTree = "<group>";
+		};
+		4E0E3F4D2606226A00DF7CE8 /* shimmers */ = {
+			isa = PBXGroup;
+			children = (
+				4E0E3F4E2606227300DF7CE8 /* TextShimmer.swift */,
+			);
+			path = shimmers;
 			sourceTree = "<group>";
 		};
 		4E100F872603220C0050CCCC /* notifications */ = {
@@ -302,6 +315,7 @@
 		4E3C2A3B2601CC1700DD0962 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				4E0E3F4D2606226A00DF7CE8 /* shimmers */,
 				4E100F9B26032A6A0050CCCC /* about us */,
 				4E100F88260322160050CCCC /* notifications */,
 				4E5D0F7926024F7600BE2939 /* custom */,
@@ -517,6 +531,7 @@
 				4EE4449926022F6800C2F756 /* CartViewModel.swift in Sources */,
 				4E037B592601E4BB00B24332 /* HomeScreen.swift in Sources */,
 				4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */,
+				4E0E3F4A2606222E00DF7CE8 /* Splash.swift in Sources */,
 				4E1A0CC7260347FB002DC3D4 /* SettingsView.swift in Sources */,
 				4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */,
 				4E0E3F432606182400DF7CE8 /* SecondPageInfo.swift in Sources */,
@@ -527,6 +542,7 @@
 				4E0FA829260365AF00229B6A /* TopModel.swift in Sources */,
 				4E100FA7260330550050CCCC /* OrderHistoryView.swift in Sources */,
 				4E1694032605CFEB002F159B /* StatusBarController.swift in Sources */,
+				4E0E3F4F2606227300DF7CE8 /* TextShimmer.swift in Sources */,
 				4E43017C26037700008F18D3 /* RabBarView.swift in Sources */,
 				4E100F98260326880050CCCC /* NotificationUpdateRowView.swift in Sources */,
 				4E1A0CB626034063002DC3D4 /* HistoryViewModel.swift in Sources */,

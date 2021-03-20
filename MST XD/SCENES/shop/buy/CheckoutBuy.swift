@@ -86,12 +86,12 @@ struct CheckoutBuy: View {
                         }
                     }
                 }
-                .background(Color.white)
+//                .background(Color.white)
                 .padding(.horizontal,16)
                 .padding(.top)
                 .padding(.bottom)
                 .cornerRadius(8)
-                .shadow(color: .gray, radius: 5, x: 2, y: 2)
+//                .shadow(color: .gray, radius: 5, x: 2, y: 2)
                 //                .padding(.horizontal)
                 //                .padding(.bottom)
                 //            }
