@@ -18,6 +18,7 @@ struct OrderHistoryView: View {
     @State var selected = ShopItem(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.09, count: 2)
     @State var show = false
     @Environment(\.localStatusBarStyle) var statusBarStyle
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack{
@@ -26,7 +27,11 @@ struct OrderHistoryView: View {
                 
                 HStack {
                     
-                    Button(action: {withAnimation{dismiss.toggle()}}, label: {
+                    Button(action: {withAnimation{
+                        presentationMode.wrappedValue.dismiss()
+                            dismiss.toggle()}
+                        
+                    }, label: {
                         
                         Image(systemName: "chevron.backward")
                             .foregroundColor(.white)
@@ -98,7 +103,10 @@ struct OrderHistoryView: View {
         .edgesIgnoringSafeArea(.all)
         .onAppear {
             self.statusBarStyle.currentStyle = .lightContent
-        } 
+        }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

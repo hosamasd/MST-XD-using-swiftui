@@ -23,9 +23,10 @@ struct PageInfo: View {
     var colors:[Color] = [.red,.blue,.green,.orange]
     @State var offset:CGFloat = 0
     @State var index = 0
-    @State private var selection = "WELCOME"
+    @State  var selection = "WELCOME"
     @Environment(\.localStatusBarStyle) var statusBarStyle
-
+    @Binding var show:Bool
+    
     var body: some View {
         //for fix ignoresSafeArea tabview
         ScrollView(.init()){
@@ -36,6 +37,7 @@ struct PageInfo: View {
             
             TabView(selection: $selection){
                 ForEach(onBoard) {dd in
+                    
                     //                ForEach(colors.indices,id:\.self) {index in
                     if dd.title=="WELCOME"{
                         VStack{
@@ -105,34 +107,57 @@ struct PageInfo: View {
                             
                             //                            Spacer(minLength: 0)
                             
-                            if dd.title == "Software Development"{
+                            if dd.title == "VERIFY AND RECEIVE"{
                                 
+                                VStack {
+                                    Spacer()
+                                        .frame(height:40)
+                               
                                 Button(action: {
-                                    
-                                    // Updating index...
                                     withAnimation{
-                                        self.ss=true
+                                        self.selection = "DISCOVER PRODUCT"
+                                        //                shoeSizeView = true
                                     }
-                                    
-                                }) {
-                                    
-                                    //                                if self.index /†/== self.onBoard.count - 1{
-                                    
-                                    HStack(spacing: 30){
-                                        
-                                        Text(self.index == self.onBoard.count - 1 ? "" : "Login" )
+                                }, label: {
+                                    ZStack {
+                                        RoundedRectangle(cornerRadius: 12)
+                                            .fill( Color.blue)
+                                            .frame( height: 50)
+                                            .shadow(color: Color.orange.opacity(0.2), radius: 10, y: 15)
+                                        //                        .padding()
+                                        Text("Next")
                                             .foregroundColor(.white)
-                                            .fontWeight(.bold)
-                                        
                                     }
-                                    .padding(.vertical)
-                                    .frame(width: UIScreen.main.bounds.width - 200)
-                                    .background(Color.red)
-                                    .clipShape(Capsule())
-                                    .padding(.bottom, 20)
+                                    //                .padding(.vertical)
+                                    .padding(.horizontal)
+                                })
+                                }
+//                                Button(action: {
+//
+//                                    // Updating index...
+//                                    withAnimation{
+//                                        self.ss=true
+//                                    }
+//
+//                                }) {
+//
+//                                    //                                if self.index /†/== self.onBoard.count - 1{
+//
+//                                    HStack(spacing: 30){
+//
+//                                        Text(self.index == self.onBoard.count - 1 ? "" : "Login" )
+//                                            .foregroundColor(.white)
+//                                            .fontWeight(.bold)
+//
+//                                    }
+//                                    .padding(.vertical)
+//                                    .frame(width: UIScreen.main.bounds.width - 200)
+//                                    .background(Color.red)
+//                                    .clipShape(Capsule())
+//                                    .padding(.bottom, 20)
                                     
                                     //                                }/
-                                }
+//                                }
                             }else {
                                 Spacer(minLength: 0)
                             }
@@ -179,7 +204,7 @@ struct PageInfo: View {
             }, label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.blue)
+                        .fill( Color.blue)
                         .frame( height: 50)
                         .shadow(color: Color.orange.opacity(0.2), radius: 10, y: 15)
                     //                        .padding()
@@ -201,12 +226,12 @@ struct PageInfo: View {
                         .fill(Color.clear)
                         .frame( height: 50)
                         .shadow(color: Color.orange.opacity(0.2), radius: 10, y: 15)
-                    
+
                     Text("Skip")
                         .foregroundColor(.black)
                 }
                 .padding(.horizontal)
-                
+
             })
             .padding()
             
@@ -215,7 +240,10 @@ struct PageInfo: View {
 //        .background(Color.clear.edgesIgnoringSafeArea(.all))
         .onAppear {
             self.statusBarStyle.currentStyle = .darkContent
-        }  
+        }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
     
     //getindex

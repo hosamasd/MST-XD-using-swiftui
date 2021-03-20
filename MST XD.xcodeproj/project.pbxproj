@@ -15,6 +15,8 @@
 		4E037B592601E4BB00B24332 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E037B582601E4BB00B24332 /* HomeScreen.swift */; };
 		4E037B632601E8D000B24332 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E037B622601E8D000B24332 /* Category.swift */; };
 		4E037B672601E9E000B24332 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E037B662601E9E000B24332 /* CategoryView.swift */; };
+		4E0E3F432606182400DF7CE8 /* SecondPageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E3F422606182400DF7CE8 /* SecondPageInfo.swift */; };
+		4E0E3F4726061EA800DF7CE8 /* SecondAboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0E3F4626061EA800DF7CE8 /* SecondAboutUsView.swift */; };
 		4E0FA825260362A100229B6A /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0FA824260362A100229B6A /* TopView.swift */; };
 		4E0FA829260365AF00229B6A /* TopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0FA828260365AF00229B6A /* TopModel.swift */; };
 		4E100F8B2603222B0050CCCC /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100F8A2603222B0050CCCC /* NotificationView.swift */; };
@@ -74,6 +76,8 @@
 		4E037B582601E4BB00B24332 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		4E037B622601E8D000B24332 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		4E037B662601E9E000B24332 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		4E0E3F422606182400DF7CE8 /* SecondPageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageInfo.swift; sourceTree = "<group>"; };
+		4E0E3F4626061EA800DF7CE8 /* SecondAboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAboutUsView.swift; sourceTree = "<group>"; };
 		4E0FA824260362A100229B6A /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		4E0FA828260365AF00229B6A /* TopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopModel.swift; sourceTree = "<group>"; };
 		4E100F8A2603222B0050CCCC /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 			children = (
 				4E3C2A3D2601CC2900DD0962 /* Home.swift */,
 				4E021D3C2601D43D00319894 /* PageInfo.swift */,
+				4E0E3F422606182400DF7CE8 /* SecondPageInfo.swift */,
 			);
 			path = welcome;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				4E100F9C26032A7D0050CCCC /* AboutUsView.swift */,
+				4E0E3F4626061EA800DF7CE8 /* SecondAboutUsView.swift */,
 				4E100FA326032E5C0050CCCC /* WhieListView.swift */,
 				4E100FA6260330550050CCCC /* OrderHistoryView.swift */,
 				4E1A0CB826034157002DC3D4 /* NewsInfoView.swift */,
@@ -513,6 +519,7 @@
 				4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */,
 				4E1A0CC7260347FB002DC3D4 /* SettingsView.swift in Sources */,
 				4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */,
+				4E0E3F432606182400DF7CE8 /* SecondPageInfo.swift in Sources */,
 				4E5D0F712602444400BE2939 /* CheckoutBuy.swift in Sources */,
 				4EFA9AE72605E91E00CE4F24 /* SecondMainView.swift in Sources */,
 				4E1A0CBC260341B0002DC3D4 /* NewRowView.swift in Sources */,
@@ -537,6 +544,7 @@
 				4EFA9AF02605EDF800CE4F24 /* ThirdMainView.swift in Sources */,
 				4E43CF852602166200286C38 /* TotoView.swift in Sources */,
 				4E5D0F7726024BB500BE2939 /* FinishCheckout.swift in Sources */,
+				4E0E3F4726061EA800DF7CE8 /* SecondAboutUsView.swift in Sources */,
 				4E5D0F7B26024F7E00BE2939 /* FloatingTextField.swift in Sources */,
 				4EEF90A92601F9340030C1D8 /* HomeDetail.swift in Sources */,
 				4E43017F2603771F008F18D3 /* MainViewModel.swift in Sources */,

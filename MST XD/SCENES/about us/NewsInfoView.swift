@@ -10,7 +10,8 @@ import SwiftUI
 struct NewsInfoView: View {
     @StateObject var vm = NewsViewModel()
     @Binding var dismiss:Bool
-    
+    @Environment(\.presentationMode) var presentationMode
+
     
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 1)
     
@@ -29,7 +30,9 @@ struct NewsInfoView: View {
                 
                 HStack {
                     
-                    Button(action: {withAnimation{dismiss.toggle()}}, label: {
+                    Button(action: {withAnimation{
+                            presentationMode.wrappedValue.dismiss()
+                            dismiss.toggle()}}, label: {
                         
                         Image(systemName: "chevron.backward")
                             .foregroundColor(.white)
@@ -141,6 +144,9 @@ struct NewsInfoView: View {
             .edgesIgnoringSafeArea(.all)
             .animation(.default)
         .statusBarStyle(.lightContent)
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
 //        .onAppear {
 //            self.statusBarStyle.currentStyle = .lightContent
 //        }

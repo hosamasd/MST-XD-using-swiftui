@@ -38,7 +38,8 @@ struct ThirdMainView: View {
                     //                    Home()
                 }
                 else{
-                    AboutUsView()
+                    SecondAboutUsView()
+//                    AboutUsView()
                         .environmentObject(vm)
                     //                    DownloadHome()
                 }

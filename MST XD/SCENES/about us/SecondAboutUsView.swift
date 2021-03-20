@@ -1,14 +1,13 @@
 //
-//  AboutUsView.swift
+//  SecondAboutUsView.swift
 //  MST XD
 //
-//  Created by hosam on 3/18/21.
+//  Created by hosam on 3/20/21.
 //
 
 import SwiftUI
 
-struct AboutUsView: View {
-    
+struct SecondAboutUsView: View {
     @State var showFirst = false
     @State var showSecond = false
     @State var showThird = false
@@ -48,29 +47,92 @@ struct AboutUsView: View {
             .background(Color.blue)
             .padding(.bottom,16)
             
+            NavigationLink(
+                destination:  WhieListView(dismiss: $showForth),
+                label: {
+            VStack {
+                Spacer()
+                    .frame(height:8)
+                
+            HStack {
+                
+                Image("wishlist")
+                    .padding(.trailing)
+                Text("Wishlist")
+                    .foregroundColor(.black)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.forward")
+                    .foregroundColor(.gray)
+                
+            }
             
-            AboutUsRorView(name: "Wishlist", image: "wishlist")
-                .onTapGesture {
-                    withAnimation{
-                        self.showFirst.toggle()
-                        vmmm.hideTab.toggle()
-                    }
-                }
+             
+                Divider()
+            }
+            .padding(.horizontal)
+            .background(Color.white)
+                })
+           
+         
             
-            AboutUsRorView(name: "Order History", image: "history")
-                .onTapGesture {
-                    withAnimation{
-                        self.showSecond.toggle()
-                        vmmm.hideTab.toggle()
-                    }
-                }
-            AboutUsRorView(name: "News Info", image: "news")
-                .onTapGesture {
-                    withAnimation{
-                        self.showThird.toggle()
-                        vmmm.hideTab.toggle()
-                    }
-                }
+            NavigationLink(
+                destination:  OrderHistoryView(dismiss: $showForth),
+                label: {
+            VStack {
+                Spacer()
+                    .frame(height:8)
+                
+            HStack {
+                
+                Image("history")
+                    .padding(.trailing)
+                Text("Order History")
+                    .foregroundColor(.black)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.forward")
+                    .foregroundColor(.gray)
+                
+            }
+            
+             
+                Divider()
+            }
+            .padding(.horizontal)
+            .background(Color.white)
+                })
+           
+            
+            NavigationLink(
+                destination:  NewsInfoView(dismiss: $showForth),
+                label: {
+            VStack {
+                Spacer()
+                    .frame(height:8)
+                
+            HStack {
+                
+                Image("news")
+                    .padding(.trailing)
+                Text("News Info")
+                    .foregroundColor(.black)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.forward")
+                    .foregroundColor(.gray)
+                
+            }
+            
+             
+                Divider()
+            }
+            .padding(.horizontal)
+            .background(Color.white)
+                })
             
             Spacer()
                 .frame(height:60)
@@ -189,11 +251,5 @@ struct AboutUsView: View {
 //        .onDisappear {
 //                             self.statusBarStyle.currentStyle = .lightContent
 //                         }
-    }
-}
-
-struct AboutUsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AboutUsView()
     }
 }

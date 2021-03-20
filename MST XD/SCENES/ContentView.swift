@@ -8,10 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var te = ""
+//    @State var te = ""
+    @State var show = false
+    
     var body: some View {
+        
+        ZStack {
+            NavigationView{
+                Home(showss: $show)
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+            }
+            
+            if !show {
+                ThirdMainView()
+                    .transition(.move(edge: .bottom))
+            }
+        }
+        
 //        SettingsView(dismiss: .constant(false))
-        ThirdMainView()
+//        ThirdMainView()
 //        MyHostingController(rootView:AboutUsView())
 //        MainView()
 //        MainView()

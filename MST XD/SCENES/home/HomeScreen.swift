@@ -122,6 +122,7 @@ struct HomeScreen: View {
                     
                 }
             }
+            .padding(.top,60)
             
             if show {
                 HomeDetail(cat: selected, show: $show, animation: name)

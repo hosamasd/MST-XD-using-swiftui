@@ -16,7 +16,8 @@ struct Home: View {
         
     ]
     @Environment(\.localStatusBarStyle) var statusBarStyle
-    
+    @State var show = false
+    @Binding var showss:Bool
     var body: some View {
         VStack() {
             
@@ -44,8 +45,12 @@ struct Home: View {
             Divider()
             
             ForEach(filters) {filter in
-                
-                LanguageRowView(filter: filter)
+                LanguageRowView(filter: filter, shows: $showss)
+//                    .onTapGesture(perform: {
+//                        show.toggle()
+//                    })
+//                })
+             
             }
             .padding(.top)
             Spacer()
@@ -55,12 +60,22 @@ struct Home: View {
         .background(Color.clear.edgesIgnoringSafeArea(.all))
         .onAppear {
             self.statusBarStyle.currentStyle = .darkContent
-        }                        
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+////                if show {
+//                self.show.toggle()
+////                }
+//            }
+        }
+//        .onAppear {
+//                           DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//                               self.show.toggle()
+//                           }
+//        }
     }
 }
 
-struct Home_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}
+//struct Home_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Home()
+//    }
+//}

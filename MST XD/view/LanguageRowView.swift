@@ -10,8 +10,8 @@ import SwiftUI
 struct LanguageRowView: View {
     
     @State var filter:Filter
-    
-    
+    @State var show = false
+    @Binding var shows:Bool
     var body: some View {
         
         VStack{
@@ -27,6 +27,9 @@ struct LanguageRowView: View {
             
             Spacer()
             
+            NavigationLink(destination: SecondPageInfo( show: $shows), isActive: $show, label: {
+
+            
             ZStack {
                 
                 Circle()
@@ -41,6 +44,7 @@ struct LanguageRowView: View {
                     
                 }
             }
+            })
         }
         .padding(.horizontal,6)
         .onTapGesture(perform: {
@@ -50,12 +54,18 @@ struct LanguageRowView: View {
             Divider()
         }
         .padding(.horizontal)
-        
+        .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) {
+                        if filter.checked {
+                            show.toggle()
+                        }
+                    }
+                }
     }
 }
 
 struct LanguageRowView_Previews: PreviewProvider {
     static var previews: some View {
-        LanguageRowView(filter: Filter(title: "english", checked: false, image: "person"))
+        LanguageRowView(filter: Filter(title: "english", checked: false, image: "person"), shows: .constant(false))
     }
 }
