@@ -15,6 +15,7 @@ struct SettingsView: View {
     @State var showVibrate = false
     @Environment(\.localStatusBarStyle) var statusBarStyle
     @State var showToast: Bool = false
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         
@@ -27,7 +28,11 @@ struct SettingsView: View {
                 
                 HStack {
                     
-                    Button(action: {withAnimation{dismiss.toggle()}}, label: {
+                    Button(action: {withAnimation{
+                        presentationMode.wrappedValue.dismiss()
+//                            dismiss.toggle()}
+                        
+                    }}, label: {
                         
                         Image(systemName: "chevron.backward")
                             .foregroundColor(.white)
@@ -95,7 +100,9 @@ struct SettingsView: View {
 //        .background(Color("Color"))
         .edgesIgnoringSafeArea(.all)
         .statusBarStyle(.lightContent)
-        
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
        
 //        .toast(isShowing: $showNotification, text: Text("Hello toast!"))
 //        .onAppear {

@@ -74,12 +74,48 @@ struct AboutUsView: View {
             
             AboutUsRorView(name: "Instructions", image: "instructions")
             
-            AboutUsRorView(name: "Settings", image: "settings")
-                .onTapGesture {
-                    withAnimation{
-                        self.showForth.toggle()
-                    }
-                }
+//            NavigationLink(
+//                destination:  SettingsView(dismiss: $showForth),
+//                label: {
+//            AboutUsRorView(name: "Settings", image: "settings")
+//                .onTapGesture {
+//                    withAnimation{
+//                        vmmm.hideTab.toggle()
+//                        self.showForth.toggle()
+//                        NavigationLink(
+//                            destination:  SettingsView(dismiss: $showForth),
+//                            label: {
+//                            })
+//                    }
+//                }
+            
+            NavigationLink(
+                destination:  SettingsView(dismiss: $showForth),
+                label: {
+            VStack {
+                Spacer()
+                    .frame(height:8)
+                
+            HStack {
+                
+                Image("settings")
+                    .padding(.trailing)
+                Text("Settings")
+                    .foregroundColor(.black)
+                
+                Spacer()
+                
+                Image(systemName: "chevron.forward")
+                    .foregroundColor(.gray)
+                
+            }
+            
+             
+                Divider()
+            }
+            .padding(.horizontal)
+            .background(Color.white)
+                })
             AboutUsRorView(name: "Rate", image: "wishlist")
             
             AboutUsRorView(name: "About", image: "history")
@@ -108,10 +144,10 @@ struct AboutUsView: View {
                     .transition(.move(edge: .bottom))
             }
             
-            if showForth {
-                SettingsView(dismiss: $showForth)
-                    .transition(.move(edge: .bottom))
-            }
+//            if showForth {
+//                SettingsView(dismiss: $showForth)
+//                    .transition(.move(edge: .bottom))
+//            }
             
             if showCongrate {
                 VStack{
