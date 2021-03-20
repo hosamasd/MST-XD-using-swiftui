@@ -15,6 +15,7 @@ struct Home: View {
         Filter(title:"Francais",checked:false, image: "france"),
         
     ]
+    @Environment(\.localStatusBarStyle) var statusBarStyle
     
     var body: some View {
         VStack() {
@@ -50,6 +51,11 @@ struct Home: View {
             Spacer()
         }
         .padding(.horizontal,16)
+        
+        .background(Color.clear.edgesIgnoringSafeArea(.all))
+        .onAppear {
+            self.statusBarStyle.currentStyle = .darkContent
+        }                        
     }
 }
 

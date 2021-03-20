@@ -17,7 +17,8 @@ struct OrderHistoryView: View {
     
     @State var selected = ShopItem(title: "iPhone 8 Plus 64GB Gold", pic: "Mask Group 3", price: 55.09, count: 2)
     @State var show = false
-    
+    @Environment(\.localStatusBarStyle) var statusBarStyle
+
     var body: some View {
         VStack{
             
@@ -95,6 +96,9 @@ struct OrderHistoryView: View {
         }
         .background(Color("Color"))
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            self.statusBarStyle.currentStyle = .lightContent
+        } 
     }
 }
 

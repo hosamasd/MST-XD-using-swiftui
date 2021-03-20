@@ -24,9 +24,11 @@ struct HomeDetail: View {
         Details(title: "iPhone 11 Pro Max \n 64GB GreenGray",  pic: "Image 2", price: "359$"),
         
     ]
-//    @Environment(\.presentationMode) var presentationMode
+    //    @Environment(\.presentationMode) var presentationMode
     @Binding var show:Bool
-    
+    var animation : Namespace.ID
+    @Environment(\.localStatusBarStyle) var statusBarStyle
+
     var body: some View {
         
         VStack {
@@ -56,19 +58,19 @@ struct HomeDetail: View {
                     
                     Image(cat.pic)
                         .aspectRatio(contentMode: .fit)
-                    
+                        .matchedGeometryEffect(id: cat.pic, in: animation)
                     VStack(alignment:.leading,spacing:8) {
                         
                         Text(cat.title)
                             .font(.title2)
                             .foregroundColor(.white)
-                        
+                            .matchedGeometryEffect(id: cat.title, in: animation)
                         Text(cat.detail)
                             
                             .foregroundColor(.white)
                             .font(.system(size: 12))
                             .lineLimit(2)
-                        
+                            .matchedGeometryEffect(id: cat.detail, in: animation)
                     }
                     .padding()
                     
@@ -105,11 +107,14 @@ struct HomeDetail: View {
             
             Spacer()
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         .background(Color("Color"))
         .edgesIgnoringSafeArea(.all)
-        .onAppear(
-        
-        )
+        .onAppear {
+            self.statusBarStyle.currentStyle = .lightContent
+        }  
         
     }
 }

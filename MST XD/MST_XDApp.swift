@@ -11,7 +11,13 @@ import SwiftUI
 struct MST_XDApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           
+            RootView {
+                           //Put the view you want your app to present here
+                           ContentView()
+                               //add necessary environment objects here
+                       }
+//            ContentView()
         }
     }
 }

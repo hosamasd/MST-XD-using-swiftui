@@ -15,6 +15,7 @@ struct AboutUsView: View {
     @State var showForth = false
     @State var showCongrate:Bool = false
     @EnvironmentObject var vmmm:MainViewModel
+    @Environment(\.localStatusBarStyle) var statusBarStyle
 
     var body: some View {
         
@@ -142,6 +143,13 @@ struct AboutUsView: View {
         }
         .background(Color("Color"))
         .edgesIgnoringSafeArea(.all)
+        .statusBarStyle(.lightContent)
+//        .onAppear {
+//            self.statusBarStyle.currentStyle = .lightContent
+//        }
+//        .onDisappear {
+//                             self.statusBarStyle.currentStyle = .lightContent
+//                         }
     }
 }
 

@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
     @Binding var dismiss:Bool
 @State var showNotification = false
+    @State var showNotifications = false
     @State var showVibrate = false
+    @Environment(\.localStatusBarStyle) var statusBarStyle
+    @State var showToast: Bool = false
 
     var body: some View {
         
@@ -58,6 +62,9 @@ struct SettingsView: View {
             VStack {
             
             SettingsRowView(name: "Push Notifications", rightName: "?", show: $showNotification)
+                .onTapGesture(perform: {
+                    self.showNotifications.toggle()
+                })
             
             SettingsRowView(name: "Vibrate", rightName: "?", show: $showVibrate)
             
@@ -85,8 +92,15 @@ struct SettingsView: View {
         .background(Color("Color"))
         
         }
-        .background(Color("Color"))
+//        .background(Color("Color"))
         .edgesIgnoringSafeArea(.all)
+        .statusBarStyle(.lightContent)
+        
+       
+//        .toast(isShowing: $showNotification, text: Text("Hello toast!"))
+//        .onAppear {
+//            self.statusBarStyle.currentStyle = .lightContent
+//        }
     }
 }
 

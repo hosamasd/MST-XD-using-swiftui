@@ -12,6 +12,8 @@ struct MainView: View {
     @State var selected = "Home"
     var tabs = ["Home","Cart","Notifications","More"]
     @StateObject var vm = MainViewModel()
+    @Environment(\.localStatusBarStyle) var statusBarStyle
+
     var body: some View {
         NavigationView{
             
@@ -70,6 +72,10 @@ struct MainView: View {
             .navigationBarBackButtonHidden(true)
             
         }
+       
+        .onAppear {
+            self.statusBarStyle.currentStyle = .lightContent
+        } 
 //        .ignoresSafeArea(.all, edges: .bottom)
 //        .background(Color.red.opacity(0.06).ignoresSafeArea(.all, edges: .all))
 //        .padding(.bottom , bottom != 0 ? 15 : 0)

@@ -24,7 +24,8 @@ struct PageInfo: View {
     @State var offset:CGFloat = 0
     @State var index = 0
     @State private var selection = "WELCOME"
-    
+    @Environment(\.localStatusBarStyle) var statusBarStyle
+
     var body: some View {
         //for fix ignoresSafeArea tabview
         ScrollView(.init()){
@@ -211,6 +212,10 @@ struct PageInfo: View {
             
         }
         .ignoresSafeArea()
+//        .background(Color.clear.edgesIgnoringSafeArea(.all))
+        .onAppear {
+            self.statusBarStyle.currentStyle = .darkContent
+        }  
     }
     
     //getindex

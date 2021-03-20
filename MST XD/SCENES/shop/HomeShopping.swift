@@ -21,6 +21,7 @@ struct HomeShopping: View {
     
     @EnvironmentObject var vmmm:MainViewModel
     @State var showDetail:Bool = false
+    @Environment(\.localStatusBarStyle) var statusBarStyle
 
     var body: some View {
         
@@ -80,6 +81,7 @@ struct HomeShopping: View {
                             
                             ForEach(vm.carts){gradient in
                                 
+                               
                                 ShopCartRow(ca:$vm.carts[getIndex(item: gradient)])
                                     .onTapGesture(perform: {
                                         withAnimation{
@@ -88,6 +90,8 @@ struct HomeShopping: View {
                                             vmmm.makeBlue.toggle()
                                         }
                                     })
+                                        
+                                   
                                 
                                 //                            .shadow(color: .gray, radius: 5, x: 2, y: 2)
                             }
@@ -101,10 +105,70 @@ struct HomeShopping: View {
                     .cornerRadius(8)
 //                    .shadow(color: .gray, radius: 5, x: 2, y: 2)
                     
-                    TotoView(text:calculateTotalPrice(), show: $showDetail,vm: vmmm)
-                        .padding(.bottom,20)
-                        .padding(.top)
+                   
+//                    TotoView(text:calculateTotalPrice(), show: $showDetail,vm: vmmm)
+//                        .padding(.bottom,20)
+//                        .padding(.top)
+                        
+                    VStack{
+                        
+                        HStack{
+                            
+                            Text("Total (Before Tax):")
+                                .fontWeight(.heavy)
+                                .foregroundColor(.gray)
+                            
+                            Spacer()
+                            
+                            // calculating Total Price...
+                            Text(calculateTotalPrice())
+                                .font(.title)
+                                .fontWeight(.heavy)
+                                .foregroundColor(.green)
+                        }
+                        .padding([.top,.horizontal])
+                        
+                        Button(action: {}) {
+                            
+                            Button(action: {
+                                withAnimation{
+                                    show.toggle()
+                                    vmmm.hideTab.toggle()
+            //                        self.selection = "DISCOVER PRODUCT"
+                                    //                shoeSizeView = true
+                                }
+                            }, label: {
+                                NavigationLink(
+                                    destination: CheckoutBuy(show: $showDetail),
+                                    label: {
+                                   
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 12)
+                                        .fill(Color.blue)
+                                        .frame( height: 50)
+                                        .shadow(color: Color.orange.opacity(0.2), radius: 10, y: 15)
+                                    //                        .padding()
+                                    Text("Buy")
+                                        .foregroundColor(.white)
+                                }
+                                //                .padding(.vertical)
+                                .padding(.horizontal)
+                                    })
+                            })
+                            
+                         
+                        }
+                        
+                        Spacer()
+                            .frame(height:16)
+                    }
+                    .background(Color.white)
+                    .padding(.horizontal,16)
+                    .cornerRadius(8)
+                    .shadow(color: .gray, radius: 5, x: 2, y: 2)
                     
+//                    .padding(.bottom,20)
+                    .padding(.top)
                     
                     Spacer()
                 }
@@ -115,6 +179,7 @@ struct HomeShopping: View {
             .background(Color("Color"))
             //        .edgesIgnoringSafeArea(.all)
             
+            //add inus view
             if show {
                 VStack{
                     
@@ -142,16 +207,19 @@ struct HomeShopping: View {
                 
             }
             
-            if showDetail {
-                CheckoutBuy(show: $showDetail)
-                    .transition(.move(edge: .bottom))
-            }
+//            if showDetail {
+//                
+////                CheckoutBuy(show: $showDetail)
+////                    .transition(.move(edge: .bottom))
+//            }
             
         }
         .padding(.bottom)
         .edgesIgnoringSafeArea(.all)
         .animation(.default)
-       
+        .onAppear {
+            self.statusBarStyle.currentStyle = .lightContent
+        } 
     }
     
     func calculateTotalPrice() ->String{

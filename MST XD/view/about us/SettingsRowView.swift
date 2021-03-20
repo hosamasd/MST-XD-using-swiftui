@@ -13,7 +13,7 @@ struct SettingsRowView: View {
     var noValue = false
     
     @Binding var show:Bool
-    
+//    @Binding var shows:Bool
     var body: some View {
         VStack {
             Spacer()

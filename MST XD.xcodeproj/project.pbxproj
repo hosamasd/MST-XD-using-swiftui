@@ -26,6 +26,8 @@
 		4E100FA126032B220050CCCC /* AboutUsRorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100FA026032B220050CCCC /* AboutUsRorView.swift */; };
 		4E100FA426032E5C0050CCCC /* WhieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100FA326032E5C0050CCCC /* WhieListView.swift */; };
 		4E100FA7260330550050CCCC /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E100FA6260330550050CCCC /* OrderHistoryView.swift */; };
+		4E1694002605C7D0002F159B /* EnvironmentValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1693FF2605C7D0002F159B /* EnvironmentValues.swift */; };
+		4E1694032605CFEB002F159B /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1694022605CFEB002F159B /* StatusBarController.swift */; };
 		4E1A0CAE26033EE7002DC3D4 /* HistoryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A0CAD26033EE7002DC3D4 /* HistoryRowView.swift */; };
 		4E1A0CB626034063002DC3D4 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A0CB526034063002DC3D4 /* HistoryViewModel.swift */; };
 		4E1A0CB926034157002DC3D4 /* NewsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1A0CB826034157002DC3D4 /* NewsInfoView.swift */; };
@@ -57,6 +59,9 @@
 		4EEF90B02601FBEE0030C1D8 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90AF2601FBEE0030C1D8 /* Details.swift */; };
 		4EEF90B32601FCCA0030C1D8 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90B22601FCCA0030C1D8 /* DetailView.swift */; };
 		4EEF90B7260202200030C1D8 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEF90B6260202200030C1D8 /* ProductDetail.swift */; };
+		4EFA9AE72605E91E00CE4F24 /* SecondMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA9AE62605E91E00CE4F24 /* SecondMainView.swift */; };
+		4EFA9AF02605EDF800CE4F24 /* ThirdMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA9AEF2605EDF800CE4F24 /* ThirdMainView.swift */; };
+		4EFA9B0A2605F0BA00CE4F24 /* MakeToastSWIFTUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFA9B092605F0BA00CE4F24 /* MakeToastSWIFTUI.swift */; };
 		4EFF5B972603156000BD7621 /* BuySuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFF5B962603156000BD7621 /* BuySuccessView.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +85,8 @@
 		4E100FA026032B220050CCCC /* AboutUsRorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsRorView.swift; sourceTree = "<group>"; };
 		4E100FA326032E5C0050CCCC /* WhieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhieListView.swift; sourceTree = "<group>"; };
 		4E100FA6260330550050CCCC /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
+		4E1693FF2605C7D0002F159B /* EnvironmentValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValues.swift; sourceTree = "<group>"; };
+		4E1694022605CFEB002F159B /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		4E1A0CAD26033EE7002DC3D4 /* HistoryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRowView.swift; sourceTree = "<group>"; };
 		4E1A0CB526034063002DC3D4 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		4E1A0CB826034157002DC3D4 /* NewsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsInfoView.swift; sourceTree = "<group>"; };
@@ -113,6 +120,9 @@
 		4EEF90AF2601FBEE0030C1D8 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		4EEF90B22601FCCA0030C1D8 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4EEF90B6260202200030C1D8 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		4EFA9AE62605E91E00CE4F24 /* SecondMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMainView.swift; sourceTree = "<group>"; };
+		4EFA9AEF2605EDF800CE4F24 /* ThirdMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdMainView.swift; sourceTree = "<group>"; };
+		4EFA9B092605F0BA00CE4F24 /* MakeToastSWIFTUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeToastSWIFTUI.swift; sourceTree = "<group>"; };
 		4EFF5B962603156000BD7621 /* BuySuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySuccessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,7 +288,7 @@
 				4E037B562601E4A900B24332 /* home */,
 				4E021D302601CDF000319894 /* welcome */,
 				4E3C2A2C2601CC0900DD0962 /* ContentView.swift */,
-				4E4301812603792B008F18D3 /* MainView.swift */,
+				4EFA9AED2605EDEA00CE4F24 /* mainview */,
 			);
 			path = SCENES;
 			sourceTree = "<group>";
@@ -362,6 +372,9 @@
 			children = (
 				4E5D0F7A26024F7E00BE2939 /* FloatingTextField.swift */,
 				4E43017B26037700008F18D3 /* RabBarView.swift */,
+				4E1693FF2605C7D0002F159B /* EnvironmentValues.swift */,
+				4E1694022605CFEB002F159B /* StatusBarController.swift */,
+				4EFA9B092605F0BA00CE4F24 /* MakeToastSWIFTUI.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -385,6 +398,16 @@
 				4EEF90B6260202200030C1D8 /* ProductDetail.swift */,
 			);
 			path = detail;
+			sourceTree = "<group>";
+		};
+		4EFA9AED2605EDEA00CE4F24 /* mainview */ = {
+			isa = PBXGroup;
+			children = (
+				4E4301812603792B008F18D3 /* MainView.swift */,
+				4EFA9AE62605E91E00CE4F24 /* SecondMainView.swift */,
+				4EFA9AEF2605EDF800CE4F24 /* ThirdMainView.swift */,
+			);
+			path = mainview;
 			sourceTree = "<group>";
 		};
 		4EFF5B952603154800BD7621 /* New Group */ = {
@@ -472,6 +495,7 @@
 				4EEF90B32601FCCA0030C1D8 /* DetailView.swift in Sources */,
 				4E100F95260324500050CCCC /* NotificationRowView.swift in Sources */,
 				4E1A0CBF2603445F002DC3D4 /* NewsViewModel.swift in Sources */,
+				4EFA9B0A2605F0BA00CE4F24 /* MakeToastSWIFTUI.swift in Sources */,
 				4E43CF81260213ED00286C38 /* ShopCartRow.swift in Sources */,
 				4E021D3A2601D14D00319894 /* Filter.swift in Sources */,
 				4E100F8B2603222B0050CCCC /* NotificationView.swift in Sources */,
@@ -490,14 +514,17 @@
 				4E1A0CC7260347FB002DC3D4 /* SettingsView.swift in Sources */,
 				4E3C2A3E2601CC2900DD0962 /* Home.swift in Sources */,
 				4E5D0F712602444400BE2939 /* CheckoutBuy.swift in Sources */,
+				4EFA9AE72605E91E00CE4F24 /* SecondMainView.swift in Sources */,
 				4E1A0CBC260341B0002DC3D4 /* NewRowView.swift in Sources */,
 				4E100F8F2603234A0050CCCC /* NotificationViewModel.swift in Sources */,
 				4E0FA829260365AF00229B6A /* TopModel.swift in Sources */,
 				4E100FA7260330550050CCCC /* OrderHistoryView.swift in Sources */,
+				4E1694032605CFEB002F159B /* StatusBarController.swift in Sources */,
 				4E43017C26037700008F18D3 /* RabBarView.swift in Sources */,
 				4E100F98260326880050CCCC /* NotificationUpdateRowView.swift in Sources */,
 				4E1A0CB626034063002DC3D4 /* HistoryViewModel.swift in Sources */,
 				4E1A0CAE26033EE7002DC3D4 /* HistoryRowView.swift in Sources */,
+				4E1694002605C7D0002F159B /* EnvironmentValues.swift in Sources */,
 				4EEF90B7260202200030C1D8 /* ProductDetail.swift in Sources */,
 				4E4301822603792B008F18D3 /* MainView.swift in Sources */,
 				4E43CF8826021AAA00286C38 /* AddMinusView.swift in Sources */,
@@ -507,6 +534,7 @@
 				4E3C2A2B2601CC0900DD0962 /* MST_XDApp.swift in Sources */,
 				4E43CF732602111B00286C38 /* HomeShopping.swift in Sources */,
 				4E100F92260323610050CCCC /* NotyModel.swift in Sources */,
+				4EFA9AF02605EDF800CE4F24 /* ThirdMainView.swift in Sources */,
 				4E43CF852602166200286C38 /* TotoView.swift in Sources */,
 				4E5D0F7726024BB500BE2939 /* FinishCheckout.swift in Sources */,
 				4E5D0F7B26024F7E00BE2939 /* FloatingTextField.swift in Sources */,

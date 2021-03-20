@@ -14,6 +14,7 @@ struct NotificationView: View {
     @StateObject var vm = NotificationViewModel()
     @State var selected = NotyModel(title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", detail: "Lorem Ipsum is simply dummy text of the print... ", date: "1", shows: "January  2, 2019 05:30")
     @EnvironmentObject var vmmm:MainViewModel
+    @Environment(\.localStatusBarStyle) var statusBarStyle
 
     var body: some View {
         ZStack {
@@ -67,7 +68,7 @@ struct NotificationView: View {
                         .padding()
                     }
                 }
-                .background(Color.white)
+//                .background(Color.white)
                 .padding(.horizontal,16)
                 .padding(.top)
                 .padding(.bottom)
@@ -114,8 +115,12 @@ struct NotificationView: View {
             }
             
         }
+//        .background(Color.red.edgesIgnoringSafeArea(.all))
         .edgesIgnoringSafeArea(.all)
         .animation(.default)
+        .onAppear {
+            self.statusBarStyle.currentStyle = .default
+        } 
     }
 }
 

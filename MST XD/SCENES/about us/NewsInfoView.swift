@@ -17,6 +17,7 @@ struct NewsInfoView: View {
     @State var selected =  NewsInfoModel(title: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ", detail: "Lorem Ipsum is simply dummy text of the print... ", date: "1", shows: "January  15, 2021 05:30",pic:"Image 4")
     @State var show = false
     @State var showCongrate:Bool = false
+    @Environment(\.localStatusBarStyle) var statusBarStyle
 
     var body: some View {
         
@@ -139,6 +140,10 @@ struct NewsInfoView: View {
         }
             .edgesIgnoringSafeArea(.all)
             .animation(.default)
+        .statusBarStyle(.lightContent)
+//        .onAppear {
+//            self.statusBarStyle.currentStyle = .lightContent
+//        }
 //        }
     }
 }

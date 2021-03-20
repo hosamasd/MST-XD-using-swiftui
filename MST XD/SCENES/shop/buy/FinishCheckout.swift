@@ -11,8 +11,10 @@ struct FinishCheckout: View {
     @Binding var show:Bool
     @State var name:String = ""
     @State var showCongrate:Bool = false
-    @EnvironmentObject var vmmm:MainViewModel
-
+//    @EnvironmentObject var vmmm:MainViewModel
+    @Environment(\.localStatusBarStyle) var statusBarStyle
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
         ZStack {
@@ -24,8 +26,10 @@ struct FinishCheckout: View {
                     HStack {
                         
                         Button(action: {withAnimation{
-                            show.toggle()
+                            presentationMode.wrappedValue.dismiss()
+//                            show.toggle()
 //                            vmmm.hideTab.toggle()
+                            print(123)
                         }}, label: {
                             
                             Image(systemName: "chevron.backward")
@@ -34,9 +38,12 @@ struct FinishCheckout: View {
                         
                         Spacer()
                         
-                        Text("Shopping Cart")
+                        Text("Shopping Carts")
                             .font(.title2)
                             .foregroundColor(.white)
+                            .onTapGesture {
+                                print(123)
+                            }
                         
                         Spacer()
                         
@@ -136,9 +143,14 @@ struct FinishCheckout: View {
             }
             
         }
-        
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
         .edgesIgnoringSafeArea(.all)
         .animation(.default)
+        .onAppear {
+            self.statusBarStyle.currentStyle = .lightContent
+        } 
     }
 }
 
