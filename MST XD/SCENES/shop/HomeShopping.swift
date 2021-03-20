@@ -44,12 +44,15 @@ struct HomeShopping: View {
                         
                         Spacer()
                         
-                        if vm.carts.count > 0 {
-                            
+                       
+                     
                             Image(systemName: "trash")
                                 .foregroundColor(.white)
+                        
                             
-                        }
+                            
+                            
+                        
                     }
                 }
                 .padding()
@@ -219,7 +222,11 @@ struct HomeShopping: View {
         .animation(.default)
         .onAppear {
             self.statusBarStyle.currentStyle = .lightContent
-        } 
+            
+        }
+        .onAppear(perform: {
+            self.vm.getData()
+        })
     }
     
     func calculateTotalPrice() ->String{
@@ -239,6 +246,8 @@ struct HomeShopping: View {
             return item.id == item1.id
         } ?? 0
     }
+    
+    
 }
 
 struct HomeShopping_Previews: PreviewProvider {
