@@ -13,49 +13,50 @@ struct ContentView: View {
     @State var isActive:Bool = false
     var body: some View {
         
+        FinishCheckout(show: .constant(false))
 //        Splash()
         
-        ZStack {
-            
-            if self.isActive {
-                           // 3.
-                NavigationView{
-                    Home(showss: $show)
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true)
-                    .navigationBarBackButtonHidden(true)
-                }
-
-                if show {
-                    ThirdMainView()
-                        .transition(.move(edge: .bottom))
-                }
-                       } else {
-                           // 4.
-                          Splash()
-                       }
-            
-//            NavigationView{
-//                Home(showss: $show)
-//                .navigationBarTitle("")
-//                .navigationBarHidden(true)
-//                .navigationBarBackButtonHidden(true)
-//            }
+//        ZStack {
 //
-//            if !show {
-//                ThirdMainView()
-//                    .transition(.move(edge: .bottom))
-//            }
-        }
-        .onAppear {
-                   // 6.
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-                       // 7.
-                       withAnimation {
-                           self.isActive = true
-                       }
-                   }
-               }
+//            if self.isActive {
+//                           // 3.
+//                NavigationView{
+//                    Home(showss: $show)
+//                    .navigationBarTitle("")
+//                    .navigationBarHidden(true)
+//                    .navigationBarBackButtonHidden(true)
+//                }
+//
+//                if show {
+//                    ThirdMainView()
+//                        .transition(.move(edge: .bottom))
+//                }
+//                       } else {
+//                           // 4.
+//                          Splash()
+//                       }
+//
+////            NavigationView{
+////                Home(showss: $show)
+////                .navigationBarTitle("")
+////                .navigationBarHidden(true)
+////                .navigationBarBackButtonHidden(true)
+////            }
+////
+////            if !show {
+////                ThirdMainView()
+////                    .transition(.move(edge: .bottom))
+////            }
+//        }
+//        .onAppear {
+//                   // 6.
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+//                       // 7.
+//                       withAnimation {
+//                           self.isActive = true
+//                       }
+//                   }
+//               }
         
 //        SettingsView(dismiss: .constant(false))
 //        ThirdMainView()

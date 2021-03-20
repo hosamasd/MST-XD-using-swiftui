@@ -8,13 +8,22 @@
 import SwiftUI
 
 struct FinishCheckout: View {
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }()
+    @State private var selectedDate = Date()
     @Binding var show:Bool
     @State var name:String = ""
     @State var showCongrate:Bool = false
-//    @EnvironmentObject var vmmm:MainViewModel
+    //    @EnvironmentObject var vmmm:MainViewModel
     @Environment(\.localStatusBarStyle) var statusBarStyle
     @Environment(\.presentationMode) var presentationMode
-    
+    @StateObject var vm = FinishViewModel()
+    @State private var birthDate = Date()
+    @State var xxx = false
     var body: some View {
         
         ZStack {
@@ -27,8 +36,8 @@ struct FinishCheckout: View {
                         
                         Button(action: {withAnimation{
                             presentationMode.wrappedValue.dismiss()
-//                            show.toggle()
-//                            vmmm.hideTab.toggle()
+                            //                            show.toggle()
+                            //                            vmmm.hideTab.toggle()
                             print(123)
                         }}, label: {
                             
@@ -68,17 +77,59 @@ struct FinishCheckout: View {
                     }
                     .padding(.horizontal)
                     
-                    VStack(spacing:16) {
-                        FloatingTextField(title: "name", text: $name)
+                    VStack() {
+                        VStack(spacing:0) {
+                            FloatingTextField(title: "name", text: $vm.name)
+                            Divider()
+                                .background(!vm.checkName(email: vm.name) ? Color.red : .blue)
+                                
+                                .padding(.bottom,16)
+                            
+                            FloatingTextField(title: "Email", text: $vm.email)
+                            Divider()
+                                .background(!vm.checkEmail(email: vm.email) ? Color.red : .blue)
+                                .padding(.bottom,16)
+                            
+                            
+                            FloatingTextField(title: "Phone", text: $vm.phone)
+                            Divider()
+                                .background(!vm.phone.isValidPhoneNumber ? Color.red : .blue)
+                                .padding(.bottom,16)
+                            FloatingTextField(title: "Address", text: $vm.address)
+                            Divider()
+                                .background(!vm.checkName(email: vm.address) ? Color.red : .blue)
+                                .padding(.bottom,16)
+                            
+                        }
                         
                         
-                        FloatingTextField(title: "Email", text: $name)
+                        HStack {
+                            Text( "\(birthDate, formatter: dateFormatter)")
+                                .foregroundColor(.gray)
+                            Spacer()
+                            Image("date & time")
+                                .onTapGesture(perform: {
+                                    withAnimation{self.xxx.toggle()}
+                                })
+                        }
                         
-                        FloatingTextField(title: "Phone", text: $name)
+                        if xxx {
+                            VStack {
+                                DatePicker("Enter your birthday", selection: $birthDate)
+                                    .datePickerStyle(GraphicalDatePickerStyle())
+                                    .foregroundColor(.gray)
+                            }
+                            
+                        }
                         
-                        FloatingTextField(title: "Address", text: $name)
+                        Divider()
+                            .background( Color.blue)
+                            .padding(.bottom,16)
                         
-                        FloatingTextField(title: "Comment", text: $name)
+                        FloatingTextField(title: "Comment", text: $vm.comment)
+                        Divider()
+                            .background(!vm.checkName(email: vm.comment) ? Color.red : .blue)
+                            .padding(.bottom,16)
                     }
                     .padding(.horizontal)
                     
@@ -150,7 +201,16 @@ struct FinishCheckout: View {
         .animation(.default)
         .onAppear {
             self.statusBarStyle.currentStyle = .lightContent
-        } 
+        }
+        //        .sheet(isPresented: $xxx, content: {
+        //            DatePicker(selection: $selectedDate, in: Date()..., displayedComponents: .date) {
+        //                           Text("")
+        //            }
+        //        })
+        //        .popover(isPresented: $xxx, content: {
+        //
+        //        })
+        
     }
 }
 

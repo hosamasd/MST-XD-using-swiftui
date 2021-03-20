@@ -17,6 +17,8 @@ struct MST_XDApp: App {
                            ContentView()
                                //add necessary environment objects here
                        }
+            .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+
 //            ContentView()
         }
     }
