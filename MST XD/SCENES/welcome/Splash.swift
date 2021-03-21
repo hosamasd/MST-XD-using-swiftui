@@ -10,7 +10,7 @@ import SwiftUI
 struct Splash: View {
     
     @State var multiColor = false
-
+    @Binding var show:Bool
     var body: some View {
         
         VStack {
@@ -21,9 +21,9 @@ struct Splash: View {
             
             TextShimmer(text: "MOHAMED", multiColors: false)
             
-            TextShimmer(text: "iOS", multiColors: true,fromRight:true)
+            TextShimmer(text: "iOS", multiColors: true)
             
-            TextShimmer(text: "Developer!!", multiColors: false,fromRight:true)
+            TextShimmer(text: "Developer!!", multiColors: false,fromRight: true)
             
             Spacer()
         }
@@ -32,11 +32,20 @@ struct Splash: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+                   // 6.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+                       // 7.
+                       withAnimation {
+                           self.show = true
+                       }
+                   }
+               }
     }
 }
 
 struct Splash_Previews: PreviewProvider {
     static var previews: some View {
-        Splash()
+        Splash( show: .constant(false))
     }
 }

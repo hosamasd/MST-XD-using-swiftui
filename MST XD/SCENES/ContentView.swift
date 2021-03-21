@@ -17,21 +17,34 @@ struct ContentView: View {
 //        Splash()
         
         ZStack {
-
-//            if self.isActive {
-                         
+//
+////            if self.isActive {
+//
+            if !isActive {
+            Splash(show: $isActive)
+            }
+            else {
                 NavigationView{
-                    Home(showss: $show)
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true)
-                    .navigationBarBackButtonHidden(true)
-                }
+//                    if isActive {
+                        Home(showss: $show)
+                            .navigationBarTitle("")
+                            .navigationBarHidden(true)
+                            .navigationBarBackButtonHidden(true)
+//                    }else {
+//                    Splash(show: $isActive)
+//                        .navigationBarTitle("")
+//                        .navigationBarHidden(true)
+//                        .navigationBarBackButtonHidden(true)
+//                    }
+//                    Home(showss: $show)
 
+                }
+            }
                 if show {
                     ThirdMainView()
                         .transition(.move(edge: .bottom))
                 }
-                
+//
             }
 //                       } else {
 //                           // 4.

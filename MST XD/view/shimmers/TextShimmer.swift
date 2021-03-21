@@ -36,7 +36,7 @@ struct TextShimmer: View {
                 }
                 // Masking For Shimmer Effect...
                 .mask(
-                
+
                     Rectangle()
     //                    // For Some More Nice Effect Were Going to use Gradient...
                         .fill(
@@ -48,17 +48,17 @@ struct TextShimmer: View {
                         .padding(20)
                     // Moving View Continously...
                     // so it will create Shimmer Effect...
-                        
+
                         .offset(x: 550)
                         .offset(x: animation ? -700 : 0)
                 )
-//                .onAppear(perform: {
-//
-//                    withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: false)){
-//
-//                        animation.toggle()
-//                    }
-//                })
+                .onAppear(perform: {
+
+                    withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: false)){
+
+                        animation.toggle()
+                    }
+                })
                 
                 Text(text)
                     .font(.system(size: 65, weight: .bold))
@@ -86,7 +86,7 @@ struct TextShimmer: View {
             }
             // Masking For Shimmer Effect...
             .mask(
-            
+
                 Rectangle()
 //                    // For Some More Nice Effect Were Going to use Gradient...
                     .fill(
@@ -98,28 +98,28 @@ struct TextShimmer: View {
                     .padding(20)
                 // Moving View Continously...
                 // so it will create Shimmer Effect...
-                    
+
                     .offset(x: -250)
                     .offset(x: animation ? 500 : 0)
             )
             
-//            .onAppear(perform: {
-//
-//                withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: false)){
-//
-//                    animation.toggle()
-//                }
-//            })
+            .onAppear(perform: {
+
+                withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: false)){
+
+                    animation.toggle()
+                }
+            })
         }
         
         }
-        .onAppear(perform: {
-        
-            withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: false)){
-                
-                animation.toggle()
-            }
-        })
+//        .onAppear(perform: {
+//
+//            withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: false)){
+//
+//                animation.toggle()
+//            }
+//        })
         
     }
     
@@ -140,6 +140,8 @@ struct TextShimmer: View {
 struct TextShimmer_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+//        TextShimmer(text: "hosam")
+//            .background(Color.black)
     }
 }
 
