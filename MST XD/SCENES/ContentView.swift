@@ -12,25 +12,27 @@ struct ContentView: View {
     @State var show = false
     @State var isActive:Bool = false
     var body: some View {
-        
-        FinishCheckout(show: .constant(false))
+//        ThirdMainView()
+//        FinishCheckout(show: .constant(false))
 //        Splash()
         
-//        ZStack {
-//
+        ZStack {
+
 //            if self.isActive {
-//                           // 3.
-//                NavigationView{
-//                    Home(showss: $show)
-//                    .navigationBarTitle("")
-//                    .navigationBarHidden(true)
-//                    .navigationBarBackButtonHidden(true)
-//                }
-//
-//                if show {
-//                    ThirdMainView()
-//                        .transition(.move(edge: .bottom))
-//                }
+                         
+                NavigationView{
+                    Home(showss: $show)
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
+                }
+
+                if show {
+                    ThirdMainView()
+                        .transition(.move(edge: .bottom))
+                }
+                
+            }
 //                       } else {
 //                           // 4.
 //                          Splash()
@@ -46,7 +48,7 @@ struct ContentView: View {
 ////            if !show {
 ////                ThirdMainView()
 ////                    .transition(.move(edge: .bottom))
-////            }
+//            }
 //        }
 //        .onAppear {
 //                   // 6.

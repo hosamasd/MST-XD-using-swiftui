@@ -12,8 +12,11 @@ struct ProductDetail: View {
     let cat : Details
     @Binding var show:Bool
     var height = UIScreen.main.bounds.height < 750
-    
-    
+    @Environment(\.presentationMode) var presentationMode
+//    @Namespace var animation
+
+    var animation : Namespace.ID
+
     var body: some View {
         
         
@@ -25,7 +28,13 @@ struct ProductDetail: View {
                 
                 HStack {
                     
-                    Button(action: {withAnimation{show.toggle()}}, label: {
+                    Button(action: {withAnimation{
+//                            presentationMode.wrappedValue.dismiss()
+                            show.toggle()
+                        
+                    }
+                        
+                    }, label: {
                         
                         Image(systemName: "chevron.backward")
                             .foregroundColor(.white)
@@ -34,8 +43,8 @@ struct ProductDetail: View {
                     Spacer()
                     
                     
-                    Image(systemName: "magnifyingglass")
-                        .foregroundColor(.white)
+//                    Image(systemName: "magnifyingglass")
+//                        .foregroundColor(.white)
                     
                     
                 }
@@ -53,6 +62,8 @@ struct ProductDetail: View {
                     
                     Image(cat.pic)
                         .padding(.top)
+                        .matchedGeometryEffect(id: cat.pic, in: animation)
+
                     Spacer()
                     
                 }
@@ -63,9 +74,9 @@ struct ProductDetail: View {
                     Text(cat.price)
                         .font(.title)
                         .foregroundColor(Color.green)
-                    
+                        .matchedGeometryEffect(id: cat.price, in: animation)
                     Text(cat.title)
-                    
+                        .matchedGeometryEffect(id: cat.title, in: animation)
                     Text("January  2, 2019 05:30")
                         .foregroundColor(Color.gray)
                     
@@ -104,17 +115,26 @@ struct ProductDetail: View {
                 //                .padding(.vertical)
                 .padding(.horizontal)
             })
-            .padding(.bottom,60)
+//            .padding(.bottom,60)
+            
+//            Spacer()
         }
         
         .background(Color.white)
         .edgesIgnoringSafeArea(.all)
+//        .navigationBarTitle("")
+//        .navigationBarHidden(true)
+//        .navigationBarBackButtonHidden(true)
     }
 }
 
-struct ProductDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductDetail(cat:         Details(title: "iPhone 8 Plus\n 64GB Gold", pic: "Mask Group 3", price: "579$"), show: .constant(false)
-        )
-    }
-}
+//struct ProductDetail_Previews: PreviewProvider {
+//    @Namespace var name
+//
+//
+//    static var previews: some View {
+//
+//        ProductDetail(cat:         Details(title: "iPhone 8 Plus\n 64GB Gold", pic: "Mask Group 3", price: "579$"), show: .constant(false), animation: name)
+//        )
+//    }
+//}
